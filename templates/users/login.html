@@ -1,0 +1,46 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style1.css' %}">
+    <title>{{ title }}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+        <a class="navbar-brand text-white" href="/">CTF</a>
+    </nav>
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="container mt-4">
+    <h1 class="mb-4">Авторизация</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Войти</button>
+
+        {% if message %}
+            <div>{{ message }}</div>
+        {% endif %}
+    </form>
+</main>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE+IbbVYUew+OrCXaRkfj3y5b7xXyX5D9z2e8c8U3z7f7p7wG2jYtL"
+        crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-Piv4xVNRyMGpqk0KjD0Hf0m6gZ5Hq3B1gA3p1JQZqzG6b6H0Lq8p4n6Yq6JxG7"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/0RrjW5y5b7xXyX5D9z2e8c8U3z7f7p7wG2jYtL"
+        crossorigin="anonymous"></script>
+</body>
+</html>

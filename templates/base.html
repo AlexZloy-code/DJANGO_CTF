@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"
+          href="/static/css/navbar.css">
+    <link rel="stylesheet"
+          href="/static/css/back_ground.css">
+    <title>{{title}}</title>
+</head>
+<body>
+    <header>
+        <form action="" method="post">
+            {% csrf_token %}
+            <nav class="navbar navbar-light bg-dark menu">
+                {% if request.user.is_authenticated %}
+                    <a class="navbar-brand name_of_command">{{ request.user.username }}</a>
+                    <a class="navbar-brand rating" href="/rating/">RATING</a>
+                    <a class="navbar-brand tasks" href="/tasks/">TASKS</a>
+                    <input class="navbar-brand input_flag" name="input_flag" placeholder="Flag: CTF{...}" type="text" value="">
+                    <input class="navbar-brand button_try" type="submit" value="TRY">
+                
+                {% else %}
+                    <a class="btn btn-success" href="/users/login/">Войти</a>
+                {% endif %}
+                <a class="navbar-brand CTF" href="/">CTF</a>
+                {% if request.user.is_superuser %}
+                <a class="navbar-brand name_of_command" href="/admin">Админка</a>
+                {% endif %}
+            </nav>
+        </form>
+    </header>
+
+    <main role="main" class="container">
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

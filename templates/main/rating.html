@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<table>
+    <tr><th>Имя</th><th>баллы</th></tr>
+    {% for user, balls in table %}
+        <div class="col-md6 border rounded"></div>
+            <tr><td>{{ user }}</td><td>{{ balls }}</td></tr>
+        </div>
+    {% endfor %}
+</table>
+{% endblock %}
