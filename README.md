@@ -1,1 +1,2 @@
-# CTF_ON_DJANGO
+# DJANGO_CTF
+# Lyceum_CTF_by_Tima&Sasha&Nastiy
