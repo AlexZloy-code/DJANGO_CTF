@@ -1,9 +1,10 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <head>
     <link rel="stylesheet"
-        href="/static/css/main.css">
+        href="{% static 'css/main.css' %}">
 </head>
 <div class="bg">
     <h1>
@@ -25,8 +26,8 @@
         <br>
         Второй формат проведения CTF-соревнований — Classic (или Attack-Defense). Команды получают идентичные серверы с набором уязвимых сервисов, на которые жюри периодически посылает приватную информацию — флаги. Задача каждой команды заключается в том, чтобы найти и устранить уязвимости на своем сервере и воспользоваться найденными уязвимостями для получения флагов у соперников. Классические соревнования проводятся реже, чем Task-Based, поскольку делать сервисы гораздо сложнее, чем писать таски.
     </p>
-    <img src="static/img/main/foto2.png">
-    <img src="static/img/main/foto1.png">
-    <img src="static/img/main/foto3.png">
+    <img src="media/job_images/main/foto2.png">
+    <img src="media/job_images/main/foto1.png">
+    <img src="media/job_images/main/foto3.png">
 </div>
 {% endblock %}
