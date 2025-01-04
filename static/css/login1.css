@@ -1,0 +1,61 @@
+h2{
+    margin: 1% 0% 5% 35vw;
+    font-size: 10vh;
+}
+label{
+    font-size: 5vh;
+    width: 10vw;
+    margin: 2% 5% 5% 30%;
+}
+.btn{
+    margin: 0 0 5% 44%;
+    width: 140px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(22, 20, 24);
+    color: #eee;
+}
+
+button,
+input{
+    margin:0;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit
+}
+.bg{
+    position: fixed;
+    top: 50%;
+    left: 48%;
+    z-index: -1;
+    transform: translate(-45%, -25%);
+    h1{
+        font-size: 2000%;
+        filter: opacity(0.5);
+        user-select: none;
+    }
+}
+.menu{
+    z-index: 1;
+    position: flex;
+    height: 10%;
+    width: 100%;
+    background: #373535;
+    display:flex;
+    align-items:center;
+    font-size:1.25rem;
+}
+.CTF{
+    position: flex;
+    font-size: 25px;
+    margin: 0 0.5%;
+    margin-left: 10px;
+    height: 10%;
+    color: #ffffff;
+    background-color: #00000020;
+    padding: 0.5%;
+    cursor: pointer;
+}

@@ -18,7 +18,7 @@
                     <a class="navbar-brand name_of_command" href="/users/logout">{{ request.user.username }}</a>
                     <a class="navbar-brand rating" href="/rating/">RATING</a>
                     <a class="navbar-brand tasks" href="/tasks/">TASKS</a>
-                    <input class="navbar-brand input_flag" name="input_flag" placeholder="Flag: CTF{...}" type="text" value="">
+                    <input class="navbar-brand input_flag" name="input_flag" placeholder="Flag: CTF{...}" type="text" value="" autocomplete="off">
                     <input class="navbar-brand button_try" type="submit" value="TRY">
                 
                 {% else %}
