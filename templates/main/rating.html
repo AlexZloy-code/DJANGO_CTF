@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
+<head>
+    <link rel="stylesheet"
+    href="/static/css/reiting.css">
+</head>
+<div class="bg">
+    <h1>Rating</h1>
+</div>
 <table>
     <tr><th>Имя</th><th>баллы</th></tr>
     {% for user, balls in table %}
