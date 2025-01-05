@@ -8,8 +8,8 @@ class Jobs(models.Model):
     balls = models.IntegerField(null=True)
     creator = models.CharField(max_length=255, null=True)
     job = models.TextField(null=True)
-    img = models.ImageField(upload_to='job_images/', null=True)
-    link = models.URLField(null=True, blank=True)
+    img = models.ImageField(upload_to='job_images/', null=True, blank=True)
+    link = models.CharField(max_length=255, null=True, blank=True)
     flag = models.CharField(max_length=255, null=True)
     show = models.BooleanField("Показывать?")
 
