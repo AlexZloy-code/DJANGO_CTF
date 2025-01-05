@@ -11,7 +11,7 @@ def mark_jobs_as_completed(modeladmin, request, queryset):
         i.save()
 
 
-mark_jobs_as_completed.short_description = "Поменять показ работ"  # Описание действия
+mark_jobs_as_completed.short_description = "Поменять показ работ"
 
 
 class JobsAdmin(admin.ModelAdmin):

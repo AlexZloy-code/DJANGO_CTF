@@ -2,7 +2,15 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from users.models import User
 from users.forms import UserAdminForm
-from django import forms
+
+
+def mark_users_as_completed(modeladmin, request, queryset):
+    for i in queryset:
+        i.show = 0 if i.show else 1
+        i.save()
+
+
+mark_users_as_completed.short_description = "Поменять показ команд"
 
 
 class CustomUserAdmin(UserAdmin):
@@ -14,6 +22,8 @@ class CustomUserAdmin(UserAdmin):
 
     list_display = ('username', 'password', 'fine', 'show')
     search_fields = ('username', 'fine', 'show')
+
+    actions = [mark_users_as_completed]
 
     def get_form(self, request, obj=None, **kwargs):
         form = super().get_form(request, obj, **kwargs)
