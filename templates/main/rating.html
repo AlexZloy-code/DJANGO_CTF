@@ -1,8 +1,5 @@
 {% extends "base.html" %}
 {% load static %}
-<!-- <link rel="stylesheet" href="for_raiting.css">
-<link rel="stylesheet" href="navbar.css'">
-<link rel="stylesheet" href="back_ground.css"> -->
 
 {% block content %}
 <meta http-equiv="refresh" content="100">
@@ -12,9 +9,9 @@
 </head>
 <body>
   <h3>Balls</h3>
-  <ul style="--n: 3">
+  <ul style="--n: 1">
     {% for id, user, balls in table %}
-      <li style="--i: {{id}}; --v: {{balls}}; background: #f2d786">{{user}}</li>
+      <li style="--i: {{id}}; --v: {{balls}}; background: #f2d786">{{user}} {{balls}}</li>
     {% endfor %}
   </ul>
 </body>

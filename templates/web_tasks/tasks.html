@@ -16,32 +16,36 @@
      <h1>{{request.user.name}}</h1>
 </div>
 <div>
-    {% for item in jobs%}
-    <div class="Task" onclick="window.location.href = '{{ item.id }}'">
-        <div class='main'>
-            {% if item.img %}
-                <img class='taskImage' src="{{item.img.url}}" alt="LOGO">
-            {% else %}
-                <img class='taskImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="LOGO">
+    {% for item in jobs %}
+        <div class="Task" onclick="window.location.href = '{{ item.id }}'">
+            <div class='main'>
+                {% if item.img %}
+                    <img class='taskImage' src="{{item.img.url}}" alt="LOGO">
+                {% else %}
+                    <img class='taskImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="LOGO">
                 {% endif %}
-            <h2>{{item.type}}</h2>
-            <div class="taskInfo">
-                <div class="balls">{{item.balls}} очков</div>
-                <div class="is_finish">
-                    {% if item.userjobs_set.count %}
-                        Сделано у {{ item.userjobs_set.count }}
-                    {% else %}
-                        Не сделано
-                    {% endif %}
+                <h2>{{item.type}}</h2>
+                <div class="taskInfo">
+                    <div class="balls">{{item.balls}} очков</div>
+                    <div class="is_finish">
+                        {% if request.user.id in item.userjobs_set.all %}
+                            Сделано
+                            
+                        {% else %}
+                            Не сделано
+                        {% endif %}
+                    </div>
+                </div>
+                <hr>
+                <div class='creator'>
+                    <!-- Это проверка что он получает -->
+                    {{item.userjobs_set.all}}
+                    {{request.user.id}}
+                    <p><ins>Creator</ins> {{item.creator}}</p>
                 </div>
             </div>
-            <hr>
-            <div class='creator'>
-                <p><ins>Creator</ins> {{item.creator}}</p>
-            </div>
         </div>
-    </div>
-    {% endfor %}
     
+    {% endfor %}
 </div>
 {% endblock %}
