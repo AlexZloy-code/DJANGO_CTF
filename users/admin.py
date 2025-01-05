@@ -1,13 +1,16 @@
 from django.contrib import admin
+from django.urls import path
+from django.shortcuts import render, redirect
 from django.contrib.auth.admin import UserAdmin
 from users.models import User
 from users.forms import UserAdminForm
-from web_tasks.models import UserJobs
+from web_tasks.models import Jobs, UserJobs
+from users.forms import MultipleJobsForm
 
 
 class UserJobsInline(admin.TabularInline):
     model = UserJobs
-    extra = 1 
+    extra = 1
 
 
 def mark_users_as_completed(modeladmin, request, queryset):
@@ -32,17 +35,31 @@ class CustomUserAdmin(UserAdmin):
 
     actions = [mark_users_as_completed]
 
-    def get_form(self, request, obj=None, **kwargs):
-        form = super().get_form(request, obj, **kwargs)
-        if obj:  # Если объект существует (т.е. редактируем существующего пользователя)
-            form.base_fields['password'].initial = '********'  # Показываем звездочки вместо реального пароля
-        return form
+    def get_urls(self):
+        urls = super().get_urls()
+        custom_urls = [
+            path('<path:object_id>/add_jobs/', self.admin_site.admin_view(self.add_jobs), name='add_jobs'),
+        ]
+        return custom_urls + urls
 
-    def save_model(self, request, obj, form, change):
-        # Если пользователь вводит новый пароль
-        if form.cleaned_data['password'] and form.cleaned_data['password'] != '********':
-            obj.set_password(form.cleaned_data['password'])
-        obj.save()  # Сохраняем объект
+    def add_jobs(self, request, object_id):
+        user = self.get_object(request, object_id)
+        if request.method == 'POST':
+            form = MultipleJobsForm(request.POST)
+            if form.is_valid():
+                form.save(user)
+                self.message_user(request, "Работы успешно добавлены.")
+                return redirect('..')
+        else:
+            form = MultipleJobsForm()
+        
+        context = {
+            'form': form,
+            'user': user,
+            'opts': self.model._meta,
+            'title': f'Добавить работы для {user.username}',
+        }
+        return render(request, 'admin/add_jobs.html', context)
 
 
 admin.site.register(User, CustomUserAdmin)

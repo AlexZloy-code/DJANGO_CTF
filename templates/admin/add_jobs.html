@@ -1,0 +1,10 @@
+{% extends "admin/base_site.html" %}
+
+{% block content %}
+<h1>Добавить работы для {{ user.username }}</h1>
+<form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="default">Сохранить</button>
+</form>
+<a href="{% url 'admin:auth_user_changelist' %}">Назад к пользователям</a>
+{% endblock %}

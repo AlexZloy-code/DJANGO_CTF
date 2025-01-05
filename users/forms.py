@@ -1,5 +1,6 @@
 from django import forms
 from users.models import User
+from web_tasks.models import Jobs, UserJobs
 
 
 class LoginForm(forms.Form):
@@ -20,3 +21,12 @@ class UserAdminForm(forms.ModelForm):
         if commit:
             user.save()
         return user
+
+
+class MultipleJobsForm(forms.Form):
+    jobs = forms.ModelMultipleChoiceField(queryset=Jobs.objects.all(), widget=forms.CheckboxSelectMultiple)
+
+    def save(self, user):
+        jobs = self.cleaned_data['jobs']
+        for job in jobs:
+            UserJobs.objects.create(user=user, job=job)
