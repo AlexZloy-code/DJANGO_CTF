@@ -24,7 +24,7 @@ def rating(request):
 
     sorted_table = sorted(users_with_balls, key=lambda x: (-x[1], x[0]))
     for i in range(len(sorted_table)):
-        sorted_table[i].insert(0, i)
+        sorted_table[i] = (i,) + sorted_table[i]
     return render(request, "main/rating.html", {"table": sorted_table})
 
 
@@ -41,7 +41,7 @@ def rating1(request):
 
     sorted_table = sorted(users_with_balls, key=lambda x: (-x[1], x[0]))
     for i in range(len(sorted_table)):
-        sorted_table[i].insert(0, i)
+        sorted_table[i] = (i,) + sorted_table[i]
     
     return render(request, "main/rating1.html", {"table": sorted_table})
 
@@ -59,7 +59,7 @@ def rating2(request):
 
     sorted_table = sorted(users_with_balls, key=lambda x: (-x[1], x[0]))
     for i in range(len(sorted_table)):
-        sorted_table[i].insert(0, i)
+        sorted_table[i] = (i,) + sorted_table[i]
     
     return render(request, "main/rating2.html", {"table": sorted_table})
 
@@ -77,7 +77,7 @@ def rating5(request):
 
     sorted_table = sorted(users_with_balls, key=lambda x: (-x[1], x[0]))
     for i in range(len(sorted_table)):
-        sorted_table[i].insert(0, i)
+        sorted_table[i] = (i,) + sorted_table[i]
         
     return render(request, "main/rating5.html", {"table": sorted_table})
 
