@@ -28,8 +28,8 @@
             <div class="taskInfo">
                 <div class="balls">{{item.balls}} очков</div>
                 <div class="is_finish">
-                    {% if item.id in request.user.jobs %}
-                        Сделано
+                    {% if item.userjobs_set.count %}
+                        Сделано у {{ item.userjobs_set.count }}
                     {% else %}
                         Не сделано
                     {% endif %}

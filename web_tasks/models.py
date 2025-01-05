@@ -32,3 +32,5 @@ class UserJobs(models.Model):
     class Meta:
         verbose_name = "Работа - команда"
         verbose_name_plural = "Работы - команды"
+
+        unique_together = ('user', 'job')

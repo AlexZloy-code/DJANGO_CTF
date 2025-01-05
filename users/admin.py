@@ -2,6 +2,12 @@ from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin
 from users.models import User
 from users.forms import UserAdminForm
+from web_tasks.models import UserJobs
+
+
+class UserJobsInline(admin.TabularInline):
+    model = UserJobs
+    extra = 1 
 
 
 def mark_users_as_completed(modeladmin, request, queryset):
@@ -14,6 +20,7 @@ mark_users_as_completed.short_description = "Поменять показ ком�
 
 
 class CustomUserAdmin(UserAdmin):
+    inlines = [UserJobsInline]
     form = UserAdminForm
 
     fieldsets = (
