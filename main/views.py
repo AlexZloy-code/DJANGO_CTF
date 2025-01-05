@@ -23,7 +23,63 @@ def rating(request):
         users_with_balls.append((user.username, balls))
 
     sorted_table = sorted(users_with_balls, key=lambda x: (-x[1], x[0]))
+    for i in range(len(sorted_table)):
+        sorted_table[i].insert(0, i)
     return render(request, "main/rating.html", {"table": sorted_table})
+
+
+@login_required(login_url='/users/login/')
+def rating1(request):
+    if request.method == "POST":
+        check_flag(request.user, request.POST.get("input_flag"))
+
+    users_with_balls = []
+
+    for user in list(User.objects.filter(show=True)):
+        balls = user.fine + sum(job.balls for job in user.jobs.all())
+        users_with_balls.append((user.username, balls))
+
+    sorted_table = sorted(users_with_balls, key=lambda x: (-x[1], x[0]))
+    for i in range(len(sorted_table)):
+        sorted_table[i].insert(0, i)
+    
+    return render(request, "main/rating1.html", {"table": sorted_table})
+
+
+@login_required(login_url='/users/login/')
+def rating2(request):
+    if request.method == "POST":
+        check_flag(request.user, request.POST.get("input_flag"))
+
+    users_with_balls = []
+
+    for user in list(User.objects.filter(show=True)):
+        balls = user.fine + sum(job.balls for job in user.jobs.all())
+        users_with_balls.append((user.username, balls))
+
+    sorted_table = sorted(users_with_balls, key=lambda x: (-x[1], x[0]))
+    for i in range(len(sorted_table)):
+        sorted_table[i].insert(0, i)
+    
+    return render(request, "main/rating2.html", {"table": sorted_table})
+
+
+@login_required(login_url='/users/login/')
+def rating5(request):
+    if request.method == "POST":
+        check_flag(request.user, request.POST.get("input_flag"))
+
+    users_with_balls = []
+
+    for user in list(User.objects.filter(show=True)):
+        balls = user.fine + sum(job.balls for job in user.jobs.all())
+        users_with_balls.append((user.username, balls))
+
+    sorted_table = sorted(users_with_balls, key=lambda x: (-x[1], x[0]))
+    for i in range(len(sorted_table)):
+        sorted_table[i].insert(0, i)
+        
+    return render(request, "main/rating5.html", {"table": sorted_table})
 
 
 @login_required(login_url='/users/login/')
