@@ -1,21 +1,29 @@
 {% extends "base.html" %}
 {% load static %}
+<!-- <link rel="stylesheet" href="for_raiting.css">
+<link rel="stylesheet" href="navbar.css'">
+<link rel="stylesheet" href="back_ground.css"> -->
 
 {% block content %}
-<meta http-equiv="refresh" content="20">
 <head>
-    <link rel="stylesheet"
-    href="{% static 'css/reiting.css' %}">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/for_raiting.css' %}">
 </head>
-<div class="bg">
-    <h1>Rating</h1>
-</div>
-<table>
-    <tr><th>Имя</th><th>баллы</th></tr>
-    {% for user, balls in table %}
-        <div class="col-md6 border rounded"></div>
-            <tr><td>{{ user }}</td><td>{{ balls }}</td></tr>
-        </div>
-    {% endfor %}
-</table>
+<body class="Chto-to">
+  <h3>skills</h3>
+  <ul style="--n: 3">
+    <li style="--i: 0; --v: 25; background: #f2d786">{{user}}</li>
+    <li style="--i: 1; --v: 10; background: #ff9784">{{user}}</li>
+    <li style="--i: 2; --v: 85; background: #c09491">{{user}}</li>
+    <li style="--i: 3; --v: 25; background: #f2d786">{{user}}</li>
+    <li style="--i: 4; --v: 10; background: #ff9784">{{user}}</li>
+    <li style="--i: 5; --v: 85; background: #c09491">{{user}}</li>
+    <li style="--i: 6; --v: 25; background: #f2d786">{{user}}</li>
+    <li style="--i: 7; --v: 10; background: #ff9784">{{user}}</li>
+    <li style="--i: 8; --v: 85; background: #c09491">{{user}}</li>
+    <li style="--i: 9; --v: 25; background: #f2d786">{{user}}</li>
+    <li style="--i: 10; --v: 10; background: #ff9784">{{user}}</li>
+    <li style="--i: 11; --v: 85; background: #c09491">{{user}}</li>
+  </ul>
+</body>
 {% endblock %}
