@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseNotFound, JsonResponse, HttpResponse
 from django.contrib.auth.decorators import login_required
-from main.models import Jobs, UserJobs
 from users.models import User
 from main.utils import check_flag
 
@@ -13,22 +12,13 @@ def main_website(request):
 
 
 @login_required(login_url='/users/login/')
-def tasks(request):
-    if request.method == "POST":
-        check_flag(request.user, request.POST.get("input_flag"))
-
-    jobs = Jobs.objects.all()
-    return render(request, "main/index.html", {"title": "Журнал работ", "jobs": jobs})
-
-
-@login_required(login_url='/users/login/')
 def rating(request):
     if request.method == "POST":
         check_flag(request.user, request.POST.get("input_flag"))
 
     users_with_balls = []
 
-    for user in list(User.objects.all()):
+    for user in list(User.objects.filter(show=True)):
         balls = user.fine + sum(job.balls for job in user.jobs.all())
         users_with_balls.append((user.username, balls))
 
@@ -38,7 +28,7 @@ def rating(request):
 
 @login_required(login_url='/users/login/')
 def ball_changer(request, command, balls):
-    if request.user.is_superuser:  # Проверка на администраторов
+    if request.user.is_superuser:
         try:
             target_user = User.objects.get(username=command)
             target_user.fine -= int(balls)

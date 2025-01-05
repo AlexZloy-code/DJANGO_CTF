@@ -1,4 +1,4 @@
-from main.models import Jobs, UserJobs
+from web_tasks.models import Jobs, UserJobs
 
 
 def check_flag(user, flag):

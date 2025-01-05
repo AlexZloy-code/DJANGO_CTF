@@ -1,5 +1,5 @@
 from django import forms
-from main.models import Jobs
+from web_tasks.models import Jobs
 
 
 class TryForm(forms.Form):
