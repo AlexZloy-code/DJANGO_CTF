@@ -19,7 +19,7 @@ def task(request, pk):
     if request.method == "POST":
         check_flag(request.user, request.POST.get("input_flag"))
 
-    job = Jobs.objects.filter(pk=pk).first()
+    job = Jobs.objects.filter(pk=pk, show=True).first()
 
     if job:
         return render(request, "web_tasks/task.html", {"title": "Журнал работ", "job": job})
