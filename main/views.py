@@ -6,7 +6,6 @@ from users.models import User
 from main.utils import check_flag
 
 
-@login_required(login_url='/users/login/')
 def main_website(request):
     if request.method == "POST":
         check_flag(request.user, request.POST.get("input_flag"))
