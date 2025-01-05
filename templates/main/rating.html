@@ -1,21 +1,21 @@
 {% extends "base.html" %}
 {% load static %}
+<!-- <link rel="stylesheet" href="for_raiting.css">
+<link rel="stylesheet" href="navbar.css'">
+<link rel="stylesheet" href="back_ground.css"> -->
 
 {% block content %}
-<meta http-equiv="refresh" content="20">
+<meta http-equiv="refresh" content="100">
 <head>
-    <link rel="stylesheet"
-    href="{% static 'css/reiting.css' %}">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{% static 'css/for_rating.css' %}">
 </head>
-<div class="bg">
-    <h1>Rating</h1>
-</div>
-<table>
-    <tr><th>Имя</th><th>баллы</th></tr>
+<body>
+  <h3>Balls</h3>
+  <ul style="--n: 3">
     {% for id, user, balls in table %}
-        <div class="col-md6 border rounded"></div>
-            <tr><td>{{ user }}</td><td>{{ balls }}</td></tr>
-        </div>
+      <li style="--i: {{id}}; --v: {{balls}}; background: #f2d786">{{user}}</li>
     {% endfor %}
-</table>
+  </ul>
+</body>
 {% endblock %}
