@@ -28,24 +28,19 @@
                 <div class="taskInfo">
                     <div class="balls">{{item.balls}} очков</div>
                     <div class="is_finish">
-                        {% if request.user.id in item.userjobs_set.all %}
-                            Сделано
-                            
-                        {% else %}
-                            Не сделано
-                        {% endif %}
+                        {% for user_job in item.userjobs_set.all %}
+                            {% if request.user == user_job.user %}
+                                Сделано
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
                 <hr>
                 <div class='creator'>
-                    <!-- Это проверка что он получает -->
-                    {{item.userjobs_set.all}}
-                    {{request.user.id}}
                     <p><ins>Creator</ins> {{item.creator}}</p>
                 </div>
             </div>
         </div>
-    
     {% endfor %}
 </div>
 {% endblock %}

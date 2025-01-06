@@ -92,15 +92,3 @@ def ball_changer(request, command, balls):
         except User.DoesNotExist:
             return HttpResponseNotFound("User not found")
     return render(request, "main/CTF.html", {"title": "CTF"})
-
-
-def get_my_ip(request):
-    ip = request.headers.get("X-Forwarded-For", request.META["REMOTE_ADDR"])
-    return JsonResponse({"ip": ip})
-
-
-def download_file(request, filename):
-    file_path = f"tasks/{filename}"
-    response = HttpResponse(open(file_path), content_type="application/octet-stream")
-    response["Content-Disposition"] = f'attachment; filename="{filename}"'
-    return response

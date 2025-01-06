@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="bg">
+    <h1>{{ request.user.username }}</h1>
+</div>
+<div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+    <img src="{% static 'img/no_looking.JPG' %}" alt="LOGO" style="width: 80%; height: auto;"/>
+</div>
+{% endblock %}
