@@ -34,10 +34,10 @@ def web_task(request, link):
     if request.method == "POST":
         check_flag(request.user, request.POST.get("input_flag"))
 
+    if link not in ['web3/robots.txt', 'help_for_ctf_task_crypto']:
+        get_object_or_404(Jobs, link=link, show=True)
 
-    get_object_or_404(Jobs, link=link, show=True)
-    
-    if '.' not in link:
+    if '.' not in link or '/' in link:
         return render(request, 'tasks/' + link + '.html')
     else:
         file_path = os.path.join(settings.BASE_DIR, 'tasks', link)
@@ -48,3 +48,5 @@ def web_task(request, link):
             return response
         else:
             raise Http404("Файл не найден")
+
+    

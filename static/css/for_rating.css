@@ -4,10 +4,6 @@
   inherits: false;
 }
 
-h3, ul, li{
-  display: grid;
-}
-
 body {
   box-sizing: border-box;
   overflow: hidden;
@@ -15,17 +11,18 @@ body {
 }
 
 h3, ul, li {
+  display: grid;
   grid-area: 1/1;
   color: black;
-  margin: 0 0 0 21.5vw;
+  margin: 0 0 0 405px;
 }
 
 h3 {
+  z-index: 0;
   place-content: center;
-  margin: 8vh 0 -10vh 40.8vw;
-  z-index: -1;
-  width: 8.5vw;
-  height: 8.5vw;
+  width: 140px;
+  height: 140px;
+  margin: 0 0 -85px 780px;
   border-radius: 50%;
   box-shadow: inset 0 0 0 15px rgba(50, 50, 50, 0.5);
   background: darkslategrey;
@@ -36,6 +33,7 @@ h3 {
 
 @keyframes disc {
   0% {
+
     transform: scale(0);
   }
   100% {
@@ -54,18 +52,19 @@ ul {
 }
 
 li {
+  z-index: -1;
   --o0: calc((35 + var(--v) / 15)*1%);
   --o1: calc(var(--o0) - .5em);
   padding-left: calc(3.5em + .5em);
   width: 700px;
   height: 30px;
   transform-origin: 0;
-  transform: rotate(calc((var(--i) - var(--m))*18deg));
+  transform: rotate(calc((var(--i) - var(--m)) * var(--angle) * 1deg));
   text-transform: uppercase;
   clip-path: polygon(0 0, 0 100%, var(--o1) 100%, var(--o0) 50%, var(--o1) 0);
   counter-reset: v var(--v);
   animation: arrw 2s ease-in 3s both, text 1s ease-out 5s both, v calc(var(--v)*.002s) linear 5s both;
-  z-index: -2;
+  
 }
 li::after {
   content: " " counter(v) "%";
