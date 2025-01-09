@@ -1,44 +1,81 @@
 .menu{
   z-index: 1;
   position: flex;
-  height: 10%;
+  height: 55px;
   width: 100%;
   background: #373535;
   display:flex;
   align-items:center;
   font-size:1.25rem;
-} 
+  cursor: pointer;
+}
+
+
+
+
 .invite{
   position: flex;
   margin: 0 52% 0 1%;
   color: black;
 }
+
+
+
+
+.fisrt_part{
+  width: 45.5%;
+  margin: 0 0.5%;
+}
+
 .name_of_command{
   position: flex;
   font-size: 25px;
-  margin: 0 0.5%;
   margin-left: 10px;
+  padding: 1%;
   height: 10%;
   color: #ffffff;
   background-color: #00000020;
-  padding: 0.5%;
+}
+
+.rating{
+  position: flex;
+  margin-left: 20px;
+  color:rgba(0,0,0,.9);
+}
+
+.tasks{
+  position: flex;
+  margin-left: 20px;
+  color:rgba(0,0,0,.9);
+}
+
+
+
+
+.second_part{
+  width: 10%;
+}
+
+.rating_num{
+  position: flex;
+  font-size: 20px;
+  color: #ffffff;
+  background-color: #00000020;
+  padding: 1%;
   cursor: pointer;
   border: 0;
 }
-.rating{
-  position: flex;
-  margin: 0 2%;
-  color:rgba(0,0,0,.9);
+
+
+
+
+.third_part{
+  width: 44%
 }
-.tasks{
-  position: flex;
-  margin: 0 0.5%;
-  color:rgba(0,0,0,.9);
-}
+
 .input_flag{
   position: flex;
-  margin: 0 0 0 42.5%;
-  width: 22.5%;
+  width: 60%;
   height: 5%;
   border: 1px solid #ffffff22;
   background-color: #282c34;
@@ -47,22 +84,23 @@
   border-radius: .7rem;
   backdrop-filter: blur(7px);
 }
+
 .button_try{
-  line-height: 20px;
-  vertical-align: text-top;
-  height: 3.25%;
   position: flex;
-  margin: 0 -28% 0 1%;
+  height: 3.25%;
+  font-size: 17px;
+  margin-left: 20px;
+  vertical-align: text-top;
   border: 1px solid #ffffff22;
   background-color: #282c34;
   background: #858a93;
   box-shadow: 0 7px 20px 5px #00000088;
   border-radius: .8rem;
-  font-size: 17px;
  }
+
 .CTF{
   position: flex;
-  margin: 0 0 0 36%;
+  margin-left: 200px;
   height: 5%;
   color:rgba(0,0,0,.9);
 }

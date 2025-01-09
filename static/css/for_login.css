@@ -17,6 +17,10 @@ input{
     border-radius: 12px;
 }
 
+.fisrt_part{
+    width: 45.5%;
+  }
+
 .error{
     margin: 50px 0 0 40%;
     width: 500px;
