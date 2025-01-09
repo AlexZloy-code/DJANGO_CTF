@@ -9,10 +9,17 @@
 </head>
 <body>
   <h3>Balls</h3>
-  <ul style="--n: 1">
-    {% for id, user, balls in table %}
-      <li style="--i: {{id}}; --v: {{balls}}; background: #f2d786">{{user}} {{balls}}</li>
+  <ul style="--n: 1; --angle: {{angle}}">
+    {% for id, user, balls, size in table %}
+      <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}} {{balls}}</li>
     {% endfor %}
   </ul>
 </body>
 {% endblock %}
+    <!--
+    {% for id, user, balls, show, size in table %}
+      {% if show %}
+        <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}}     {{balls}}</li>
+      {% endif %}
+    {% endfor %}
+    -->

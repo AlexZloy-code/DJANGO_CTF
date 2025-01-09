@@ -1,15 +1,31 @@
 h2{
-    margin: 1% 0% 5% 35vw;
-    font-size: 10vh;
+    margin: 1% 0% 2% 33%;
+    font-size: 100px;
 }
-label{
-    font-size: 5vh;
-    width: 10vw;
-    margin: 2% 5% 5% 30%;
-}
+
 .btn{
-    margin: 0 0 5% 44%;
-    width: 140px;
+    margin: 0 0 0 42%;
+    width: 250px;
+    height: 30px;
+    border-radius: 15px;
+}
+
+input{
+    margin: 0 0 0 36%;
+    width: 500px;
+    height: 30px;
+    border-radius: 12px;
+}
+
+.fisrt_part{
+    width: 45.5%;
+  }
+
+.error{
+    margin: 50px 0 0 40%;
+    width: 500px;
+    height: 30px;
+    border-radius: 12px;
 }
 
 body {
@@ -19,13 +35,6 @@ body {
     color: #eee;
 }
 
-button,
-input{
-    margin:0;
-    font-family: inherit;
-    font-size: inherit;
-    line-height: inherit
-}
 .bg{
     position: fixed;
     top: 50%;

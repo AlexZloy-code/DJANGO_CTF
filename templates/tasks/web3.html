@@ -9,11 +9,1221 @@
   <body>
     <div class="login">
       <h1>Вход</h1>
-      <form method="post">
-        <input type="text" name="username" placeholder="Username" required="required"/>
-        <button type="submit">Login</button>
-      </form>
-      <div>{{ message }}</div>
+      <input id="text" type="text" name="username" placeholder="Username" required="required" autocomplete="off">
+      <button type="submit" id="btn">Login</button>
+      <div id="error">{{ message }}</div>
     </div>
+    <script>
+        // Функция для генерации случайных чисел
+        function getRandomInt(min, max) {
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        // Генерация массива случайных чисел
+        const randomArray = Array.from({ length: 20 }, () => getRandomInt(1, 100));
+
+        // Функция для нахождения максимального значения в массиве
+        function findMax(arr) {
+            return arr.reduce((max, num) => (num > max ? num : max), arr[0]);
+        }
+
+        // Функция для нахождения минимального значения в массиве
+        function findMin(arr) {
+            return arr.reduce((min, num) => (num < min ? num : min), arr[0]);
+        }
+
+        // Функция для подсчета суммы элементов массива
+        function sumArray(arr) {
+            return arr.reduce((sum, num) => sum + num, 0);
+        }
+
+        // Функция для подсчета среднего значения массива
+        function averageArray(arr) {
+            return sumArray(arr) / arr.length;
+        }
+
+        // Функция для фильтрации четных чисел
+        function filterEvenNumbers(arr) {
+            return arr.filter(num => num % 2 === 0);
+        }
+
+        // Функция для фильтрации нечетных чисел
+        function filterOddNumbers(arr) {
+            return arr.filter(num => num % 2 !== 0);
+        }
+
+        // Функция для сортировки массива по возрастанию
+        function sortArrayAsc(arr) {
+            return [...arr].sort((a, b) => a - b);
+        }
+
+        // Функция для сортировки массива по убыванию
+        function sortArrayDesc(arr) {
+            return [...arr].sort((a, b) => b - a);
+        }
+
+        // Функция для объединения двух массивов
+        function mergeArrays(arr1, arr2) {
+            return [...arr1, ...arr2];
+        }
+
+        // Функция для удаления дубликатов из массива
+        function removeDuplicates(arr) {
+            return [...new Set(arr)];
+        }
+
+        // Функция для создания объекта из массива ключей и значений
+        function createObject(keys, values) {
+            return keys.reduce((obj, key, index) => {
+                obj[key] = values[index];
+                return obj;
+            }, {});
+        }
+
+        // Пример использования функций
+        const max = findMax(randomArray);
+        const min = findMin(randomArray);
+        const sum = sumArray(randomArray);
+        const average = averageArray(randomArray);
+        const evenNumbers = filterEvenNumbers(randomArray);
+        const oddNumbers = filterOddNumbers(randomArray);
+        const sortedAsc = sortArrayAsc(randomArray);
+        const sortedDesc = sortArrayDesc(randomArray);
+        const mergedArray = mergeArrays(randomArray, evenNumbers);
+        const uniqueArray = removeDuplicates([...randomArray, ...evenNumbers]);
+
+        console.log('Случайный массив:', randomArray);
+        console.log('Максимальное значение:', max);
+        console.log('Минимальное значение:', min);
+        console.log('Сумма элементов:', sum);
+        console.log('Среднее значение:', average);
+        console.log('Четные числа:', evenNumbers);
+        console.log('Нечетные числа:', oddNumbers);
+        console.log('Отсортированный по возрастанию массив:', sortedAsc);
+        console.log('Отсортированный по убыванию массив:', sortedDesc);
+        console.log('Объединенный массив:', mergedArray);
+        console.log('Уникальный массив:', uniqueArray);
+
+        // Асинхронная функция для имитации загрузки данных
+        async function fetchData() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    resolve('Данные загружены');
+                }, 1500);
+            });
+        }
+
+        // Вызов асинхронной функции
+        fetchData().then(data => console.log(data));
+
+        // Генерация последовательности Фибоначчи с использованием рекурсии
+        function fibonacciRecursive(n) {
+            if (n <= 1) return n;
+            return fibonacciRecursive(n - 1) + fibonacciRecursive(n - 2);
+        }
+
+        // Генерация последовательности Фибоначчи с использованием цикла
+        function fibonacciIterative(n) {
+            let error = document.getElementById("error");
+            const fib = [0, 1];
+            for (let i = 2; i < n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            return fib;
+        }
+
+        const fibRec = fibonacciRecursive(10);
+        const fibIter = fibonacciIterative(10);
+
+        console.log('Рекурсивная последовательность Фибоначчи:', fibRec);
+        console.log('Итеративная последовательность Фибоначчи:', fibIter);
+
+        // Пример работы с объектами
+        const person = {
+            name: 'Alice',
+            age: 30,
+            greet() {
+                console.log("Привет, меня зовут ${this.name}");
+            },
+        };
+
+        // Вызов метода объекта
+        person.greet();
+
+        // Изменение свойства объекта и добавление элемента текст
+        person.age += 1;
+        let text = document.getElementById("text");
+        console.log('Возраст после изменения:', person.age, text);
+
+              
+        // Клонирование объекта
+        const clonedPerson = { ...person };
+        clonedPerson.name = 'Bob';
+        console.log('Клонированный объект:', clonedPerson);
+              
+        // Использование стрелочных функций
+        const square = x => x * x;
+        const squares = randomArray.map(square);
+              
+        console.log('Квадраты чисел в массиве:', squares);
+
+        // Использование методов массива для обработки данных
+        const doubled = randomArray.map(num => num * 2);
+        console.log('Удвоенные значения:', doubled);
+
+        // Создание класса и его использование
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+            speak() {
+                console.log("${this.name} издает звук");
+                
+            }
+        }
+        const dog = new Animal('Собака');
+        dog.speak();
+
+        //Здесь создается привязка кнопки к отработчику функции Фибоначчи
+        document.getElementById("btn").onclick = generateFibonacci11;
+  
+        class SmartCalculator {
+            constructor() {
+                this.history = [];
+            }
+          
+            add(a, b) {
+                const result = a + b;
+                this.history.push("Added ${a} and ${b}: ${result}");
+                return result;
+            }
+          
+            subtract(a, b) {
+                const result = a - b;
+                this.history.push("Subtracted ${b} from ${a}: ${result}");
+                return result;
+            }
+          
+            multiply(a, b) {
+                const result = a * b;
+                this.history.push("Multiplied ${a} and ${b}: ${result}");
+                return result;
+            }
+          
+            divide(a, b) {
+                if (b === 0) {
+                    this.history.push("Division by zero: undefined");
+                    return undefined;
+                }
+                const result = a / b;
+                this.history.push("Divided ${a} by ${b}: ${result}");
+                return result;
+            }
+          
+            getHistory() {
+                return this.history.join('\n');
+            }
+        }
+
+        const calculator = new SmartCalculator();
+
+        const randomNumbers = Array.from({ length: 10 }, () => Math.floor(Math.random() * 100));
+
+        randomNumbers.forEach(num => {
+            calculator.add(num, Math.floor(Math.random() * 100));
+            calculator.subtract(num, Math.floor(Math.random() * 100));
+            calculator.multiply(num, Math.floor(Math.random() * 100));
+            calculator.divide(num, Math.floor(Math.random() * 10) + 1);
+        });
+
+        async function fetchData(url) {
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    resolve("Fetched data from ${url}");
+                }, 1000);
+            });
+        }
+
+        async function processData() {
+            const urls = ['https://api.example.com/data1', 'https://api.example.com/data2'];
+
+            for (const url of urls) {
+                const data = await fetchData(url);
+                console.log(data);
+            }
+        }
+
+        function generateFibonacci(n) {
+            let fib = [0, 1];
+            for (let i = 2; i < n; i++) {
+                fib[i] = fib[i - 1] + fib[i - 2];
+            }
+            return fib;
+        }
+
+        // Часть 5: Работа с строками
+            
+        // Функция для перевода строки в верхний регистр
+        function toUpperCase(str) {
+            return str.toUpperCase();
+        }
+        
+        // Пример использования функции
+        const exampleString = "hello world";
+        console.log('Верхний регистр:', toUpperCase(exampleString));
+        
+        // Функция для подсчета количества гласных в строке
+        function countVowels(str) {
+            const vowels = str.match(/[aeiou]/gi);
+            return vowels ? vowels.length : 0;
+        }
+        
+        console.log('Количество гласных в строке:', countVowels(exampleString));
+        
+        // Часть 6: Работа с датами
+        
+        // Функция для получения текущей даты и времени
+        function getCurrentDateTime() {
+            return new Date();
+        }
+        
+        console.log('Текущая дата и время:', getCurrentDateTime());
+        
+        // Функция для форматирования даты в строку
+        function formatDate(date) {
+            return date.toISOString().split('T')[0];
+        }
+        
+        console.log('Отформатированная дата:', formatDate(getCurrentDateTime()));
+        
+        // Часть 7: Работа с математическими функциями
+        
+        // Функция для вычисления факториала числа
+        function factorial(n) {
+            if (n < 0) return undefined;
+            if (n === 0 || n === 1) return 1;
+            return n * factorial(n - 1);
+        }
+        
+        console.log('Факториал числа 5:', factorial(5));
+        
+        // Функция для генерации случайного числа в диапазоне
+        function getRandomFloat(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+        
+        console.log('Случайное число от 1 до 10:', getRandomFloat(1, 10));
+        
+        // Часть 8: Работа с JSON
+        
+        // Пример объекта для сериализации в JSON
+        const jsonObject = {
+            name: 'Alice',
+            age: 30,
+            hobbies: ['reading', 'traveling'],
+        };
+        
+        // Сериализация объекта в JSON
+        const jsonString = JSON.stringify(jsonObject);
+        console.log('JSON строка:', jsonString);
+        
+        // Десериализация JSON строки обратно в объект
+        const parsedObject = JSON.parse(jsonString);
+        console.log('Десериализованный объект:', parsedObject);
+        
+        // Часть 9: Замыкания
+        
+        // Функция-замыкание для создания счетчика
+        function createCounter() {
+            let count = 0;
+            return function() {
+                count += 1;
+                return count;
+            };
+        }
+        
+        const counter = createCounter();
+        console.log('Счетчик:', counter());
+        console.log('Счетчик:', counter());
+        console.log('Счетчик:', counter());
+        
+        // Часть 10: Рекурсия
+        
+        // Рекурсивная функция для вычисления суммы чисел до n
+        function sumTo(n) {
+            if (n <= 1) return n;
+            return n + sumTo(n - 1);
+        }
+        
+        console.log('Сумма чисел от 1 до 5:', sumTo(5));
+        
+        // Часть 11: Модули (ES6)
+        
+        // export const pi = Math.PI;
+        
+        // export function calculateCircleArea(radius) {
+        //     return pi * radius * radius;
+        // }
+        
+        // Импортирование модуля (в реальном коде)
+        // import { pi, calculateCircleArea } from './module.js';
+        
+        // Часть 12: Обработка ошибок
+        
+        // Функция с обработкой ошибок
+        function safeDivide(a, b) {
+            try {
+                if (b === 0) throw new Error("Деление на ноль");
+                return a / b;
+            } catch (error) {
+                console.error(error.message);
+                return null;
+            }
+        }
+        
+        console.log('Результат деления:', safeDivide(10, 2));
+        console.log('Результат деления:', safeDivide(10, 0));
+        
+        // Часть 13: Работа с событиями
+        
+        // Создание элемента и добавление обработчика события
+        // const button = document.createElement('button');
+        // button.innerText = 'Нажми меня';
+        // document.body.appendChild(button);
+        // 
+        // button.addEventListener('click', () => {
+        //     console.log('Кнопка нажата!');
+        // });
+        
+        // Часть 14: Использование Promise.all
+        
+        // Пример нескольких промисов
+
+        const promise1 = new Promise(resolve => setTimeout(() => resolve('Promise 1 resolved'), 1000));
+        const promise2 = new Promise(resolve => setTimeout(() => resolve('Promise 2 resolved'), 1500));
+
+        Promise.all([promise1, promise2]).then(results => {
+            console.log(results); // ['Promise 1 resolved', 'Promise 2 resolved']
+        });
+
+        // Часть 15: Генераторы
+
+        // Генератор для последовательности чисел
+        function* numberGenerator() {
+            let index = 0;
+            while (true) {
+                yield index++;
+            }
+        }
+
+        const gen = numberGenerator();
+        console.log(gen.next().value); // 0
+        console.log(gen.next().value); // 1
+        console.log(gen.next().value); // 2
+
+        // Часть 16: Символы и их использование
+
+        const uniqueSymbol = Symbol('unique');
+        const symbolObject = {
+            [uniqueSymbol]: 'Это уникальное свойство',
+        };
+
+        console.log(symbolObject[uniqueSymbol]); // Это уникальное свойство
+
+        // Часть 17: WeakMap и WeakSet
+
+        const weakMap = new WeakMap();
+        let objKey = {};
+        weakMap.set(objKey, 'value associated with objKey');
+
+        console.log(weakMap.get(objKey)); // value associated with objKey
+
+        // Часть 18: Proxy
+
+        const targetObject = {};
+        const handler = {
+            get(target, prop) {
+                return prop in target ? target[prop] : 'Property does not exist';
+            },
+        };
+
+        const proxyObject = new Proxy(targetObject, handler);
+
+        proxyObject.name = 'Alice';
+        console.log(proxyObject.name); // Alice
+        console.log(proxyObject.age); // Property does not exist
+
+        // Часть 19: Итераторы и for...of
+
+        const iterableObject = {
+            *[Symbol.iterator]() {
+                yield 'a';
+                yield 'b';
+                yield 'c';
+            },
+        };
+
+        for (let value of iterableObject) {
+            console.log(value); // a b c
+        }
+
+        // Часть 20: Асинхронные итераторы
+
+        async function* asyncGenerator() {
+            yield 'async a';
+            yield 'async b';
+        }
+
+        (async () => {
+            for await (let value of asyncGenerator()) {
+                console.log(value); // async a async b
+            }
+        })();
+
+        // Продолжение кода...
+
+        // Часть 21: Статические методы класса
+
+        class MyClass {
+            static staticMethod() {
+                console.log("Это статический метод");
+            }
+        }
+
+        MyClass.staticMethod(); // Это статический метод
+
+        // Часть 22: Декораторы (ESNext)
+        document.cookie = "username=Yaz gudu";
+        console.log(document.cookie); // username=Yaz gudu
+
+        function log(target, key, descriptor) {
+            const originalMethod = descriptor.value;
+
+            descriptor.value = function(...args) {
+                console.log("Вызов метода ${key} с аргументами ${args}");
+                return originalMethod.apply(this, args);
+            };
+
+            return descriptor;
+        }
+
+        class ExampleClass {
+            //@log
+            method(arg) {
+                console.log("Метод выполнен с аргументом ${arg}");
+            }
+        }
+
+        const exampleInstance = new ExampleClass();
+        exampleInstance.method(42); // Вызов метода method с аргументами 42
+
+        // Часть 23: Массивы объектов
+
+        const users = [
+            { name: 'Alice', age: 25 },
+            { name: 'Bob', age: 30 },
+        ];
+
+        // Сортировка массива объектов по возрасту
+        users.sort((a, b) => a.age - b.age);
+        console.log(users);
+
+        // Часть 24: Map и Set
+
+        const myMap = new Map();
+        myMap.set('key1', 'value1');
+        myMap.set('key2', 'value2');
+
+        console.log(myMap.get('key1')); // value1
+
+        const mySet = new Set([1, 2, 3]);
+        mySet.add(4);
+        mySet.add(2); // Дубликаты игнорируются
+
+        console.log(mySet); // Set {1, 2, 3, 4}
+
+        // Часть 25: Регулярные выражения
+
+        const regex = /hello/i;
+        console.log(regex.test("Hello world")); // true
+
+        // Часть 26: Объект Math
+
+        console.log(Math.sqrt(16)); // 4
+        console.log(Math.random()); // Случайное число от 0 до 1
+
+        // Часть 27: Работа с localStorage
+
+        localStorage.setItem("key", "value");
+        console.log(localStorage.getItem("key")); // value
+        localStorage.removeItem("key");
+        
+        document.cookie = "username=Djim BIm";
+        console.log(document.cookie); // username=Djim BIm
+
+        // Часть 28: Работа с cookies
+
+        document.cookie = "username=John Doe";
+        console.log(document.cookie); // username=John Doe
+
+        // Часть 29: Хранение данных в IndexedDB (асинхронно)
+
+        let db;
+        let request = indexedDB.open("myDatabase", 1);
+
+        request.onsuccess = function(event) {
+            db = event.target.result;
+        };
+
+        request.onerror = function(event) {
+            console.error("Ошибка при открытии базы данных:", event.target.errorCode);
+        };
+
+        // Часть 30: Web Workers (асинхронно)
+
+        if (window.Worker) {
+            const worker = new Worker("worker.js");
+
+            worker.onmessage = function(event) {
+                console.log("Сообщение от worker:", event.data);
+            };
+
+            worker.postMessage("Привет, worker!");
+        }
+
+        // Продолжение кода...
+        
+        function generateFibonacci11() {
+            if (text.value == "{{ request.user.username }}") {
+                 error.innerHTML = 'Robots are anithing around us'
+            } else if (text.value) {
+                error.innerHTML = decodeURIComponent(escape('\xd0\x9e\xd1\x88\xd0\xb8\xd0\xb1\xd0\xba\xd0\xb0 \xd1\x80\xd0\xb5\xd0\xb3\xd0\xb8\xd1\x81\xd1\x82\xd1\x80\xd0\xb0\xd1\x86\xd0\xb8\xd0\xb8'))
+            } else {
+                error.innerHTML = ''
+            };
+        };
+
+        // Часть 31: Использование Fetch API
+
+        fetch("https://api.example.com/data")
+            .then(response => response.json())
+            .then(data => console.log(data))
+            .catch(error => console.error("Ошибка:", error));
+
+        // Часть 32: Создание HTML-элементов динамически
+
+        // const divElement = document.createElement("div");
+        // divElement.innerText = "Это динамически созданный элемент";
+        // document.body.appendChild(divElement);
+
+        // Часть 33: События мыши и клавиатуры
+
+        document.addEventListener("keydown", function(event) {
+           console.log("Нажата клавиша: ${event.key}");
+        });
+
+        // Часть 34: CSS стили через JavaScript
+
+        divElement.style.color = "blue";
+        divElement.style.fontSize = "20px";
+
+        // Часть 35: Анимации через CSS классы
+
+        divElement.classList.add("fade-in");
+
+        // Часть 36: Использование библиотеки Lodash
+
+        const arrayWithDuplicates = [1, 2, 3, 1, 2];
+        const uniqueValues = _.uniq(arrayWithDuplicates); // [1,2,3]
+
+        // Часть 37: Использование библиотеки Moment.js для работы с датами
+
+        //const now = moment();
+        console.log(now.format("YYYY-MM-DD HH:mm:ss")); // Текущая дата и время в заданном формате
+
+        // Часть 38: Использование библиотеки Axios для HTTP-запросов
+
+        axios.get("https://api.example.com/data")
+           .then(response => console.log(response.data))
+           .catch(error => console.error("Ошибка:", error));
+
+        // Часть 39: Валидация форм с использованием регулярных выражений
+
+        function validateEmail(email) {
+           const regex = /^[^s@]+@[^s@]+.[^s@]+$/;
+           return regex.test(email);
+        }
+
+        console.log(validateEmail("test@example.com")); // true
+
+        // Часть 40: Использование CSS Grid и Flexbox через JavaScript
+
+        document.body.style.display = "grid";
+        document.body.style.gridTemplateColumns = "repeat(3, 1fr)";
+        document.body.style.gap = "10px";
+
+        // Продолжение кода...
+
+        // Часть 41: Использование SVG через JavaScript
+
+        const svgNamespace = "http://www.w3.org/2000/svg";
+        const svgElement = document.createElementNS(svgNamespace, "svg");
+        svgElement.setAttribute("width", "100");
+        svgElement.setAttribute("height", "100");
+
+        const circleElement = document.createElementNS(svgNamespace, "circle");
+        circleElement.setAttribute("cx", "50");
+        circleElement.setAttribute("cy", "50");
+        circleElement.setAttribute("r", "40");
+        circleElement.setAttribute("fill", "red");
+
+        svgElement.appendChild(circleElement);
+        document.body.appendChild(svgElement);
+
+        // Часть 42: Использование Canvas API для рисования на холсте
+
+        const canvas = document.createElement("canvas");
+        canvas.width = 200;
+        canvas.height = 200;
+        document.body.appendChild(canvas);
+
+        // const ctx = canvas.getContext("2d");
+        ctx.fillStyle = "blue";
+        ctx.fillRect(20, 20, 150, 100);
+
+        // Часть 43: Создание простого таймера с использованием setTimeout
+
+        setTimeout(() => {
+           console.log("Таймер сработал через 3 секунды");
+        }, 3000);
+
+        // Часть 44: Создание простого счетчика с использованием setInterval
+
+        let counterValue = 0;
+        setInterval(() => {
+           counterValue++;
+           console.log("Счетчик: ${counterValue}");
+        }, 1000);
+
+        // Часть 45: Работа с URL и параметрами запроса
+
+        const urlParams = new URLSearchParams(window.location.search);
+        urlParams.set("name", "Alice");
+        urlParams.delete("age");
+
+        // Часть 46: Применение методов массива reduce и map вместе
+
+        const numbersForReduceMapExample = [1, -2, -3, -4];
+        const totalPositiveSum = numbersForReduceMapExample.map(num => Math.abs(num)).reduce((a,b)=>a+b);
+
+        console.log(totalPositiveSum); // Сумма абсолютных значений чисел из массива 
+
+        // Часть 47: Использование методов массива forEach и filter вместе
+
+        const numbersForForEachFilterExample=[1,-2,-3,-4];
+
+        numbersForForEachFilterExample.filter(num=>num<0).forEach(num=>console.log(num)); // Печатает все отрицательные числа из массива 
+
+        // Часть48 : Использование метода some 
+
+        const numbersForSomeExample=[1,-2,-3,-4];
+
+        if(numbersForSomeExample.some(num=>num<0)){
+           console.log("Есть отрицательные числа"); // Если есть отрицательные числа 
+        }
+
+        // Часть49 : Использование метода every 
+
+        if(numbersForSomeExample.every(num=>num<0)){
+            console.log("Все числа отрицательные"); 
+        }else{
+           console.log("Не все числа отрицательные"); 
+        }
+
+        // Часть50 : Использование метода find 
+
+        const foundNumber=numbersForSomeExample.find(num=>num<0);
+
+        if(foundNumber){
+           console.log("Найдено первое отрицательное число:${foundNumber}"); 
+        }else{
+           console.log("Отрицательных чисел нет"); 
+        }
+
+        // Продолжение кода...
+
+        // Часть51 : Использование метода flat 
+
+        const nestedArrays=[1,[2,[3,[4]]]];
+        const flattened=nestedArrays.flat(2); 
+        console.log(flattened); // [1,2,3,4]
+
+        // Часть52 : Использование метода fill 
+
+        const filledArray=new Array(5).fill(0); 
+        console.log(filledArray); // [0,0,0,0,0]
+
+        // Часть53 : Использование метода splice 
+
+        let arrayForSplice=[1,2,3];
+        arrayForSplice.splice(1,1); 
+        console.log(arrayForSplice); // [1,3]
+
+        // Часть54 : Использование метода slice 
+
+        let slicedArray=arrayForSplice.slice(0,2); 
+        console.log(slicedArray); // [1]
+
+        // Часть55 : Использование метода shift 
+
+        let shiftedValue=arrayForSplice.shift(); 
+        console.log(shiftedValue); // Удаляет первый элемент массива 
+
+        // Часть56 : Использование метода unshift 
+
+        arrayForSplice.unshift(0); 
+        console.log(arrayForSplice); // [0,3]
+
+        // Часть57 : Использование метода concat 
+
+        let concatenatedArray=[...arrayForSplice].concat([4]); 
+        console.log(concatenatedArray); // [0,3,4]
+
+        // Часть58 : Использование метода join 
+
+        let joinedString=concatenatedArray.join("-"); 
+        console.log(joinedString); // "0-3-4"
+
+        // Часть59 : Использование метода reverse 
+
+        let reversedArray=[...concatenatedArray].reverse(); 
+        console.log(reversedArray); // [4,3,0]
+
+        // Часть60 : Использование метода indexOf 
+
+        let indexOfThree=concatenatedArray.indexOf(3); 
+        if(indexOfThree!==-1){
+           console.log("Число найдено на индексе:${indexOfThree}"); 
+        }else{
+           console.log("Число не найдено"); 
+        }
+
+        // Продолжение кода...
+
+        // Часть61 : Использование метода lastIndexOf 
+
+        let lastIndexOfThree=concatenatedArray.lastIndexOf(3); 
+        if(lastIndexOfThree!==-1){
+           console.log("Число найдено на последнем индексе:${lastIndexOfThree}"); 
+        }else{
+           console.log("Число не найдено"); 
+        }
+
+        // Часть62 : Использование метода includes 
+
+        if(concatenatedArray.includes(4)){
+           console.log("Массив содержит число четыре"); 
+        }else{
+           console.log("Массив не содержит число четыре"); 
+        }
+
+        // Часть63 : Использование метода every 
+
+        if(concatenatedArray.every(num=>num>0)){
+           console.log("Все числа положительные"); 
+        }else{
+           console.log("Есть отрицательные числа"); 
+        }
+
+        // Часть64 : Использование метода some 
+
+        if(concatenatedArray.some(num=>num<0)){
+           console.error("Есть отрицательные числа"); 
+        }else{
+           console.warn("Нет отрицательных чисел"); 
+        }
+
+        // Часть65 : Использование метода filter 
+
+        let filteredValues=concatenatedArray.filter(num=>num>2); 
+        console.table(filteredValues); // Печатает все значения больше двух 
+
+        // Часть66 : Использование метода map 
+
+        let mappedValues=concatenatedArray.map(num=>num*2); 
+        console.table(mappedValues); // Печатает все значения умноженные на два 
+
+        // Часть67 : Использование метода reduce 
+
+        let sumOfValues=concatenatedArray.reduce((acc,num)=>acc+num,0); 
+        console.table(sumOfValues); // Печатает сумму всех значений 
+
+        // Часть68 : Использование метода find 
+
+        let firstGreaterThanTwo=concatenatedArray.find(num=>num>2); 
+        if(firstGreaterThanTwo){
+           console.table(firstGreaterThanTwo); 
+        }else{
+           console.warn("Нет значений больше двух"); 
+        }
+
+        // Продолжение кода...
+
+        // Часть69 : Использование метода findIndex 
+
+        let indexGreaterThanTwo=concatenatedArray.findIndex(num=>num>2); 
+        if(indexGreaterThanTwo!==-1){
+           console.table(indexGreaterThanTwo); 
+        }else{
+           console.warn("Нет значений больше двух"); 
+        }
+
+        // Часть70 : Использование метода reduceRight 
+
+        let rightSum=concatenatedArray.reduceRight((acc,num)=>acc+num,0); 
+        console.table(rightSum); // Печатает сумму всех значений начиная справа налево 
+
+        // Часть71 : Создание простого класса с методом toString 
+
+        class SimpleClass{
+           constructor(name){
+              this.name=name; 
+           }
+
+           toString(){
+              return "Имя:${this.name}"; 
+           }
+        }
+
+        let instance=new SimpleClass("Alice"); 
+        console.table(instance.toString());
+
+        // Часть72 : Создание класса с приватным свойством 
+
+        class PrivateClass{
+           #privateProperty="private"; 
+        
+           getPrivateProperty(){
+              return this.#privateProperty; 
+           }
+        }
+
+        let privateInstance=new PrivateClass(); 
+        console.table(privateInstance.getPrivateProperty()); // private 
+
+        // Част73 : Создание класса с статическим методом 
+
+        //class StaticClass{
+        //   static staticMethod(){
+        //      console.table("Это статический метод"); 
+        //   }
+        //}
+
+        //StaticClass.staticMethod(); // Это статический метод 
+
+        //// Част74 : Создание класса-наследника 
+
+        //class ParentClass{
+        //   constructor(name){
+        //      this.name=name; 
+        //   }
+
+        //   greet(){
+        //      console.table("Привет:${this.name}"); 
+        //   }
+        //}
+
+        //class ChildClass extends ParentClass{
+        //   greet(){
+        //      super.greet(); 
+        //      console.table("Я ваш ребенок"); 
+        //   }
+        //}
+
+        //let childInstance=new ChildClass("Alice"); 
+        //childInstance.greet(); 
+
+        //// Част75 : Создание простого интерфейса через функцию 
+
+        //function interfaceFunction(){
+        //   throw new Error("Этот метод должен быть реализован"); 
+        //}
+
+        //// Част76 : Создание простого интерфейса через класс 
+
+        //class InterfaceClass{
+        //   method(){
+        //      throw new Error("Этот метод должен быть реализован"); 
+        //   }
+        //}
+
+        // Част77 : Простое использование модуля ES6 
+
+        // export const moduleValue="Модульное значение"; 
+
+        // export function moduleFunction(){
+        //    console.table(moduleValue); 
+        // }
+
+        // Част78 : Импортирование модуля ES6 (в реальном коде)
+
+        // import {moduleValue,moduleFunction} from './module.js'; 
+
+        // Част79 : Простое использование библиотек jQuery 
+
+        $(document).ready(function(){
+           $("button").click(function(){
+              alert("Кнопка нажата!"); 
+           }); 
+        });
+
+        // Част80 : Простое использование библиотеки Axios 
+
+        axios.get("/api/data")
+        .then(response=>{
+           console.table(response.data); 
+        }).catch(error=>{
+           console.error(error); 
+        });
+
+        // Продолжение кода...
+
+        // Част81 : Простое использование библиотеки Lodash 
+
+        _.forEach([1,2],function(value){
+           console.table(value);  
+        });
+
+        // Част82 : Простое использование библиотеки Moment.js 
+
+        let now=moment(); 
+        console.table(now.format()); 
+
+        // Част83 : Простое использование библиотеки Chart.js (графики)
+
+        // var ctx=document.getElementById("myChart").getContext("2d");
+        var myChart=new Chart(ctx,{
+           type:"bar",
+           data:{
+              labels:["Red","Blue","Yellow"],
+              datasets:[{
+                 label:"# of Votes",
+                 data:[12,19,3],
+                 backgroundColor:[
+                    "rgba(255,99,132,.2)",
+                    "rgba(54,162,235,.2)",
+                    "rgba(255,206,86,.2)"
+                 ],
+                 borderColor:[
+                    "rgba(255,99,132,.8)",
+                    "rgba(54,162,235,.8)",
+                    "rgba(255,206,86,.8)"
+                 ],
+                 borderWidth:1,
+              }]
+           },
+
+        options:{
+              scales:{
+                 y:{
+                    beginAtZero:true,
+                 },
+              },
+           },
+        });
+
+        // Част84 : Простое использование библиотеки D3.js (визуализация данных)
+
+        d3.select("#myDiv").selectAll("p").data([4,8]).enter().append("p").text(function(d){
+        return "Я число:" + d;  
+        });
+
+        // Част85 : Простое использование библиотеки Bootstrap (стилизация)
+
+        $("button").addClass("btn btn-primary");
+
+        // Част86 : Простое использование библиотеки Popper.js (всплывающие подсказки)
+
+        $(function(){
+           $('[data-toggle="tooltip"]').tooltip();  
+        });
+
+        // Част87 : Простое использование библиотеки SweetAlert (модальные окна)
+
+        swal({
+        title:"Заголовок",
+        text:"Текст сообщения",
+        icon:"success",
+        });
+
+        // Част88 : Простое использование библиотеки Axios для отправки POST-запроса
+
+        axios.post("/api/data",{name:"Alice"})
+        .then(response=>{
+           console.table(response.data);  
+        }).catch(error=>{
+           console.error(error);  
+        });
+
+        // Част89 : Простое использование библиотеки jQuery UI (интерактивные элементы)
+
+        $("#draggable").draggable();  
+
+        // Част90 : Простое использование библиотеки Socket.IO (веб-сокеты)
+
+        var socket=io();  
+        socket.on("message",function(msg){
+           console.table(msg);  
+        });
+
+        document.cookie = "username=SDHRTYLXUYX;JHCYIHJ;CYHGKXFH";
+        console.log(document.cookie); // username=SDHRTYLXUYX;JHCYIHJ;CYHGKXFH
+
+        // Продолжение кода...
+
+        // Част91 : Простое использование библиотеки Leaflet.js (карты)
+
+        var map=L.map("map").setView([51.505,-0.09],13);
+
+        L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+            attribution:'&copy;<a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+        }).addTo(map);
+
+        // Част92 : Простое использование библиотеки Three.js (3D графика)
+
+        var scene=new THREE.Scene();  
+        var camera=new THREE.PerspectiveCamera(75,width/height,.1,1000);
+
+        var renderer=new THREE.WebGLRenderer();  
+        renderer.setSize(width,height);
+
+        document.body.appendChild(renderer.domElement);
+
+        // Част93 : Простое использование библиотеки GSAP (анимации)
+
+        gsap.to("#myDiv",{duration:1,x:100});  
+
+        // Част94 : Простое использование библиотеки Anime.js (анимации)
+
+        anime({
+        targets:"#myDiv",
+        translateX:250,
+        duration:2000,
+        });
+
+        // Част95 : Простое использование библиотеки Chartist.js (графики)
+
+        new Chartist.Line("#chart",{labels:[1,2],series:[[5,10]]});
+
+        // Част96 : Простое использование библиотеки Pusher.js (реальное время)
+
+        var pusher=new Pusher("APP_KEY",{cluster:"us2"});
+
+        var channel=pusher.subscribe("my-channel");
+
+        channel.bind("my-event",function(data){
+           alert(JSON.stringify(data));  
+        });
+
+        // Част97 : Простое использование библиотеки Clipboard.js (копирование в буфер обмена)
+
+        new ClipboardJS(".btn");
+
+        // Част98 : Простое использование библиотеки Firebase (база данных)
+
+        firebase.database().ref("/data").set({name:"Alice"});
+
+        // Част99 : Простое использование библиотеки Axios для загрузки файлов
+
+        axios.get("/file.txt",{responseType:"blob"})
+        .then(response=>{
+           const url=window.URL.createObjectURL(new Blob([response.data]));
+        
+           const link=document.createElement("a");
+        
+           link.href=url;  
+        
+           link.setAttribute("download","file.txt");
+        
+           document.body.appendChild(link);  
+        
+           link.click();  
+        });
+
+        // Част100 : Простое использование библиотек jQuery и Bootstrap вместе.
+
+        $(document).ready(function(){
+        $(".btn").click(function(){
+        alert("Кнопка нажата!");  
+        });  
+        });
+
+
+        const fibonacciSeries = generateFibonacci(20);
+        console.log('Fibonacci Series:', fibonacciSeries);
+
+        const promises = randomNumbers.map(num => new Promise(resolve => {
+            setTimeout(() => resolve(num * num), Math.random() * 1000);
+        }));
+
+        Promise.all(promises).then(results => {
+            console.log('Squared Numbers:', results);
+        });
+
+        const objectManipulator = {
+            data: {},
+
+            set(key, value) {
+                this.data[key] = value;
+            },
+          
+            get(key) {
+                return this.data[key] || null;
+            },
+          
+            delete(key) {
+                delete this.data[key];
+            }
+        };
+
+        objectManipulator.set('name', 'John Doe');
+        objectManipulator.set('age', 30);
+        console.log('Object Data:', objectManipulator.data);
+
+        const arrayUtils = {
+            unique(arr) {
+                return [...new Set(arr)];
+            },
+          
+            flatten(arr) {
+                return arr.reduce((flat, toFlatten) => flat.concat(Array.isArray(toFlatten) ? this.flatten(toFlatten) : toFlatten), []);
+            }
+        };
+
+        const nestedArray = [1, [2, [3, 4]], 5];
+        console.log('Flattened Array:', arrayUtils.flatten(nestedArray));
+
+        const complexObject = {
+            name: 'Alice',
+            age: 25,
+            hobbies: ['reading', 'gaming'],
+            greet() {
+                console.log("Hello, my name is ${this.name}");
+            }
+        };
+
+        complexObject.greet();
+
+        setTimeout(() => {
+            console.log('This will run after 2 seconds');
+        }, 2000);
+
+        const intervalId = setInterval(() => {
+            console.log('This will run every second');
+        }, 1000);
+
+        setTimeout(() => clearInterval(intervalId), 5000);
+
+    </script>
   </body>
 </html>

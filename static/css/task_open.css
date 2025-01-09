@@ -62,6 +62,14 @@ width: 1000px;
     color: #a89ec9;
     margin-right: .2rem;
 }
+.count_finish{
+    position: absolute;
+    left: 560px;
+    top: 300px;
+    align-items: center;
+    color: #a89ec9;
+    margin-right: .2rem;
+}
 .button_download{
   width: 200px;
   margin:13% 0px 0px 80%;

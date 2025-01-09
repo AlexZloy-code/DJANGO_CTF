@@ -59,3 +59,7 @@ html, body {
     outline: none;
     border: 1px #ccc solid;
   }
+
+  .error{
+    margin-bottom: 20px;
+  }

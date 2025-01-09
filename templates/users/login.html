@@ -18,11 +18,15 @@
     <h2>Авторизация</h2>
     <form action="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn">Войти</button>
-
+        <p>
+            <input class="datas" type="text" name="name" placeholder="Название команды:" maxlength="255" required="" id="id_name">
+        </p>
+        <p>
+            <input class="datas" type="password" name="password" required="" placeholder="Пароль:" id="id_password">
+        </p>
+            <button type="submit" class="btn">Войти</button>
         {% if message %}
-            <div>{{ message }}</div>
+            <div class="error">{{ message }}</div>
         {% endif %}
     </form>
 </main>

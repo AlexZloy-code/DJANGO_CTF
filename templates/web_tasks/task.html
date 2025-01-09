@@ -4,12 +4,12 @@
 {% block content %}
 <link rel="stylesheet" href="{% static 'css/task_open.css' %}">
 <div class="bg">
-    <h1>{{request.user.name}}</h1>
+    <h1>{{ request.user.username }}</h1>
 </div>
 <div class="Task_open">
     <div class="info">
         {% if item.img %}
-                <img class='taskImage' src="{{item.img.url}}" alt="LOGO">
+            <img class='taskImage' src="{{item.img.url}}" alt="LOGO">
         {% else %}
             <img class='taskImage' src="https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="LOGO">
         {% endif %}
@@ -17,12 +17,37 @@
         <div class="creator">Creator {{job.creator}}</div>
         <div class="taskInfo">
             <div class="balls">{{job.balls}} очков</div>
+            <div class="is_finish">
+                {% for user_job in job.userjobs_set.all %}
+                    {% if request.user == user_job.user %}
+                        Сделано
+                    {% endif %}
+                {% endfor %}
+            </div>
+            <div class="count_finish">
+                {% if job.userjobs_set.count %}
+                    {% if job.userjobs_set.count == 1 %}
+                        Сделано у {{job.userjobs_set.count}} команды
+                    {% else %}
+                        Сделано у {{job.userjobs_set.count}} команд
+                        {% endif %}
+                {% endif %}
+            </div>
         </div>
     </div>
     <div class="text">
         <p>{{job.job}}</p>
     </div>
-    <button class="button_download" onclick="window.location.href = '/tasks/{{job.link}}'"><a>Скачать файл задания</a></button>
+    {% if job.link %}
+        <button class="button_download" onclick="window.location.href = '/tasks/{{job.link}}'">
+            {% if '.' in job.link %}
+                Скачать файл задания
+            {% else %}
+                Перейти по ссылке
+            {% endif %}
+        </button>
+    {% endif %}
+    
 </div>
 {% endblock %}
 https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80

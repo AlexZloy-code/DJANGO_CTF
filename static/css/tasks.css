@@ -1,8 +1,8 @@
 .Task{
   float: left;
-  width: 33%;
+  width: 34%;
   user-select: none;
-  max-width: 20%;
+  max-width: 20.6%;
   margin: 0% 2% 5% 2%;
   border: 1px solid #ffffff22;
   background-color: #282c34;
@@ -13,7 +13,7 @@
   overflow: hidden;
 }
 hr{
-  width: 100%;
+  margin: 0 0 5% -5%;
   border: none;
   border-bottom: 1px solid #88888855;
   margin-top: 0;
