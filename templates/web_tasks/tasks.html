@@ -17,7 +17,7 @@
 </div>
 <div>
     {% for item in jobs %}
-        <div class="Task" onclick="window.location.href = '{{ item.id }}'">
+        <div class="Task" onclick="window.location.href = '{{ item.id }}' + '/'">
             <div class='main'>
                 {% if item.img %}
                     <img class='taskImage' src="{{item.img.url}}" alt="LOGO">

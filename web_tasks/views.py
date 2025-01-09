@@ -14,6 +14,9 @@ def tasks(request):
 
     jobs = Jobs.objects.filter(show=True)
 
+    for i in range(len(jobs)):
+        jobs[i].flag = "Not cheating"
+
     return render(request, "web_tasks/tasks.html", {"title": "Журнал работ", "jobs": jobs})
 
 
@@ -23,6 +26,7 @@ def task(request, pk):
         check_flag(request.user, request.POST.get("input_flag"))
 
     job = get_object_or_404(Jobs, pk=pk, show=True)
+    job.flag = "Not cheating"
 
     if job:
         return render(request, "web_tasks/task.html", {"title": "Журнал работ", "job": job})

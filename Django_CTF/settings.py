@@ -1,20 +1,33 @@
 import os
 from pathlib import Path
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
+
+def env_validator(env: str):
+    return env.lower() in ["true", "yes", "1", "y", "t"]
+
+
+SECRET_KEY = os.getenv(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-g^_9#0r_apxp3u27(sbh$-67hmm6mu1u5x0%eto309@091)!b-",
+)
+
+ENCRYPTION_KEY = os.getenv(
+    "DJANGO_ENCRYPTION_KEY",
+    "dsEa3e6lF983WPH88NsSS9A0HGCIK5xA",
+).encode()
+
+DEBUG = env_validator(os.getenv("DJANGO_DEBUG", "true"))
+
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(
+    ","
+)
+print(ALLOWED_HOSTS)
+
+CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-n%ta4#)#qx5(l49!dbp#9nojj1=1$exyoebpuz50nbsyouq1bk"
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+SITE_URL = os.getenv("DJANGO_SITE_URL", "http://127.0.0.1:8000")
 
 AUTH_USER_MODEL = "users.User"
 # Application definition
@@ -56,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -79,11 +93,27 @@ WSGI_APPLICATION = "Django_CTF.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": BASE_DIR / "db.sqlite3",
+        "NAME": BASE_DIR / "CTF.sqlite3",
     }
 }
 
-# Password validation
+# DB_NAME = os.getenv("DJANGO_POSTGRESQL_NAME", "CTF")
+# DB_USER = os.getenv("DJANGO_POSTGRESQL_USER", "postgres")
+# DB_PASSWORD = os.getenv("DJANGO_POSTGRESQL_PASSWORD", "root")
+# DB_HOST = os.getenv("DJANGO_POSTGRESQL_HOST", "localhost")
+# DB_PORT = int(os.getenv("DJANGO_POSTGRESQL_PORT", "5432"))
+
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": DB_NAME,
+#         "USER": DB_USER,
+#         "PASSWORD": DB_PASSWORD,
+#         "HOST": DB_HOST,
+#         "PORT": DB_PORT,
+#     },
+# }
+# # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = []
