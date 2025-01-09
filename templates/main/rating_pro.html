@@ -7,6 +7,9 @@
   <link rel="stylesheet"
     href="{% static 'css/reiting.css' %}">
 </head>
+<div class="bg">
+  <h1>Rating</h1>
+</div>
 <body>
   <h3>Balls</h3>
   <ul style="--n: 1; --angle: {{angle}}">
@@ -18,7 +21,7 @@
     <tr><th>Место</th><th>Имя</th><th>баллы</th></tr>
     {% for id, user, balls, size in table %}
         <div class="col-md6 border rounded"></div>
-            <tr><td>{{ id }}</td><td>{{ user }}</td><td>{{ balls }}</td></tr>
+            <tr><td>{{ forloop.counter }}</td><td>{{ user }}</td><td>{{ balls }}</td></tr>
         </div>
     {% endfor %}
   </table>
