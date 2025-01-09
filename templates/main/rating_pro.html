@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet"
+    href="{% static 'css/reiting.css' %}">
+</head>
+<body>
+  <h3>Balls</h3>
+  <ul style="--n: 1; --angle: {{angle}}">
+    {% for id, user, balls, size in table %}
+      <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}} {{balls}}</li>
+    {% endfor %}
+  </ul>
+  <table>
+    <tr><th>Место</th><th>Имя</th><th>баллы</th></tr>
+    {% for id, user, balls, size in table %}
+        <div class="col-md6 border rounded"></div>
+            <tr><td>{{ id }}</td><td>{{ user }}</td><td>{{ balls }}</td></tr>
+        </div>
+    {% endfor %}
+  </table>
+</body>
+{% endblock %}
+    <!--
+    {% for id, user, balls, show, size in table %}
+      {% if show %}
+        <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}}     {{balls}}</li>
+      {% endif %}
+    {% endfor %}
+    -->

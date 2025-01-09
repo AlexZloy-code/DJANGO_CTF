@@ -5,17 +5,18 @@
 <meta http-equiv="refresh" content="20">
 <head>
     <link rel="stylesheet"
-    href="{% static 'css/reiting.css' %}">
+        href="{% static 'css/reiting.css' %}">
+    
 </head>
 <div class="bg">
     <h1>Rating</h1>
 </div>
 <table>
-    <tr><th>Имя</th><th>баллы</th></tr>
+    <tr><th>Место</th><th>Имя</th><th>баллы</th></tr>
     {% for id, user, balls in table %}
         <div class="col-md6 border rounded"></div>
-            <tr><td>{{ user }}</td><td>{{ balls }}</td></tr>
+            <tr><td>{{ id }}</td><td>{{ user }}</td><td>{{ balls }}</td></tr>
         </div>
     {% endfor %}
-</table>
+  </table>
 {% endblock %}
