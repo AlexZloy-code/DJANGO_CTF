@@ -23,9 +23,6 @@
                         <a class="rating" href="/rating1/">RATING1</a>
                     {% endif %}
                     <a class="tasks" href="/tasks/">TASKS</a>
-                    {% if request.user.is_superuser %}
-                        <a class="name_of_command" href="/admin">Админка</a>
-                    {% endif %}
                 </div>
                 <div class="second_part">
                     {% for username, balls in users_table %}
