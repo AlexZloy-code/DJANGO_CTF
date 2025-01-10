@@ -15,8 +15,11 @@
 
 .invite{
   position: flex;
-  margin: 0 52% 0 1%;
-  color: black;
+  font-size: 25px;
+  margin-left: 10px;
+  padding: 1%;
+  color: #ffffff;
+  background-color: #00000020;
 }
 
 

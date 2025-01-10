@@ -50,7 +50,7 @@ body {
 .menu{
     z-index: 1;
     position: flex;
-    height: 10%;
+    height: 55px;
     width: 100%;
     background: #373535;
     display:flex;
