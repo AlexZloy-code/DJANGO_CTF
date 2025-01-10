@@ -1,0 +1,741 @@
+[
+    {
+        "model": "admin_interface.theme",
+        "pk": 1,
+        "fields": {
+            "name": "Django",
+            "active": true,
+            "title": "Django administration",
+            "title_color": "#F5DD5D",
+            "title_visible": true,
+            "logo": "",
+            "logo_color": "#FFFFFF",
+            "logo_max_width": 400,
+            "logo_max_height": 100,
+            "logo_visible": true,
+            "favicon": "",
+            "env_name": "",
+            "env_color": "#E74C3C",
+            "env_visible_in_header": true,
+            "env_visible_in_favicon": true,
+            "language_chooser_active": true,
+            "language_chooser_control": "default-select",
+            "language_chooser_display": "code",
+            "css_header_background_color": "#0C4B33",
+            "css_header_text_color": "#44B78B",
+            "css_header_link_color": "#FFFFFF",
+            "css_header_link_hover_color": "#C9F0DD",
+            "css_module_background_color": "#44B78B",
+            "css_module_background_selected_color": "#FFFFCC",
+            "css_module_text_color": "#FFFFFF",
+            "css_module_link_color": "#FFFFFF",
+            "css_module_link_selected_color": "#FFFFFF",
+            "css_module_link_hover_color": "#C9F0DD",
+            "css_module_rounded_corners": true,
+            "css_generic_link_color": "#0C3C26",
+            "css_generic_link_hover_color": "#156641",
+            "css_generic_link_active_color": "#29B864",
+            "css_save_button_background_color": "#0C4B33",
+            "css_save_button_background_hover_color": "#0C3C26",
+            "css_save_button_text_color": "#FFFFFF",
+            "css_delete_button_background_color": "#BA2121",
+            "css_delete_button_background_hover_color": "#A41515",
+            "css_delete_button_text_color": "#FFFFFF",
+            "related_modal_active": true,
+            "related_modal_background_color": "#000000",
+            "related_modal_background_opacity": "0.3",
+            "related_modal_rounded_corners": true,
+            "related_modal_close_button_visible": true,
+            "list_filter_highlight": true,
+            "list_filter_dropdown": true,
+            "list_filter_sticky": true,
+            "list_filter_removal_links": false,
+            "foldable_apps": true,
+            "show_fieldsets_as_tabs": false,
+            "show_inlines_as_tabs": false,
+            "collapsible_stacked_inlines": false,
+            "collapsible_stacked_inlines_collapsed": true,
+            "collapsible_tabular_inlines": false,
+            "collapsible_tabular_inlines_collapsed": true,
+            "recent_actions_visible": true,
+            "form_submit_sticky": false,
+            "form_pagination_sticky": false
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add Theme",
+            "content_type": 1,
+            "codename": "add_theme"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change Theme",
+            "content_type": 1,
+            "codename": "change_theme"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete Theme",
+            "content_type": 1,
+            "codename": "delete_theme"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view Theme",
+            "content_type": 1,
+            "codename": "view_theme"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 2,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 2,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 2,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 2,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 3,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 3,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 3,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 3,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 4,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 4,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 4,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 4,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 5,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 5,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 5,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 5,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 6,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 6,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 6,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 6,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 7,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 7,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 7,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 7,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add Работа",
+            "content_type": 8,
+            "codename": "add_jobs"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change Работа",
+            "content_type": 8,
+            "codename": "change_jobs"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete Работа",
+            "content_type": 8,
+            "codename": "delete_jobs"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view Работа",
+            "content_type": 8,
+            "codename": "view_jobs"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add Работа - команда",
+            "content_type": 9,
+            "codename": "add_userjobs"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change Работа - команда",
+            "content_type": 9,
+            "codename": "change_userjobs"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete Работа - команда",
+            "content_type": 9,
+            "codename": "delete_userjobs"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view Работа - команда",
+            "content_type": 9,
+            "codename": "view_userjobs"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin_interface",
+            "model": "theme"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "users",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "web_tasks",
+            "model": "jobs"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "web_tasks",
+            "model": "userjobs"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "0y7c2ipxw23cqtjxop4xrsucpdptnx6b",
+        "fields": {
+            "session_data": ".eJxVjEEOwiAQRe_C2hAodLAu3fcMzcwwSNVAUtqV8e7apAvd_vfef6kJtzVPW5NlmqO6KKtOvxshP6TsIN6x3KrmWtZlJr0r-qBNjzXK83q4fwcZW_7W7AORIZcgIFhngYiBQTh0nlME4_pexHYGQ5LzkAyL846dwTSEKFa9P_jLOIQ:1tWIn8:-8A5BXzPSfpEqA02rB0fsPA7QJjQr_uclVWboxOCyME",
+            "expire_date": "2025-01-24T17:27:26.265Z"
+        }
+    },
+    {
+        "model": "users.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$600000$kznZ2J8p12ZXAJtwiCoulP$P3fwlDiwiADs+Z4gF3FoI7oViwKaprCUryGZVet1qWk=",
+            "last_login": "2025-01-10T17:27:26.262Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "email": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-01-10T17:27:15.569Z",
+            "fine": 0,
+            "show": true,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 1,
+        "fields": {
+            "type": "WEB",
+            "full_name": "HTML lover",
+            "balls": 250,
+            "creator": "Suniy",
+            "job": "Здесь всё выглядит попроще чем в Admin panel, но так ли это на самом деле никто не знает, попробуйте зарегистрироваться на сайте",
+            "img": "job_images/web3.png",
+            "link": "web3",
+            "flag": "CTF{Robots_Are_Help1ng_anythere}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 2,
+        "fields": {
+            "type": "WEB",
+            "full_name": "Странный сайт",
+            "balls": 400,
+            "creator": "Suniy",
+            "job": "Кажется у нас появился какой-то странный сайт на сервере",
+            "img": "job_images/console.png",
+            "link": "web1",
+            "flag": "CTF{Web_I5_n0T_H4RD_:)}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 3,
+        "fields": {
+            "type": "CRYPTO",
+            "full_name": "Тайное послание",
+            "balls": 150,
+            "creator": "Tema",
+            "job": "Мой друг имеет синдром преследования, поэтому каждое сообщение от него, это та ещё задачка, помогите мне понять что он мне написал",
+            "img": "job_images/shapka.png",
+            "link": "converter.txt",
+            "flag": "CTF{http://www.kirov.spb.ru/sc/393/}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 4,
+        "fields": {
+            "type": "OSINT",
+            "full_name": "M0000re_c0ffee",
+            "balls": 200,
+            "creator": "Tema",
+            "job": "Я очень люблю кофе и только в этом году узнал что появились кофейные конфеты от компании, изначально занимавшейся вафлями, но какое их полное название....                                                                                                         ЭТО РЕШИЛА ОДНА КОМАНДА И ТО С ЧЬЕЙ-ТО ПОМОЩЬЮ",
+            "img": "job_images/shapka_coffee.jpg",
+            "link": null,
+            "flag": "CTF{C0nfectum_c0ffee_candy}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 5,
+        "fields": {
+            "type": "OSINT",
+            "full_name": "Gauss joke : gun",
+            "balls": 500,
+            "creator": "Tema",
+            "job": "Нормальные люди при упоминании об этом представляют человека, фанаты игры оружие, а Мартлет II прошлое, но что за дату он вспоминает?(пример: 03.10.2024)",
+            "img": "job_images/play.jpg",
+            "link": null,
+            "flag": "CTF{19.11.1966}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 6,
+        "fields": {
+            "type": "OSINT",
+            "full_name": "Python ask",
+            "balls": 350,
+            "creator": "Tema",
+            "job": "Когда-то я делил числа в питоне и не понимал, почему при делении результатом является всегда дробное число, но потом я посмотрел на полное число и у меня появилось еще больше вопросов...(что я увидел в конце)",
+            "img": "job_images/py.jpg",
+            "link": null,
+            "flag": "CTF{1}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 7,
+        "fields": {
+            "type": "WEB",
+            "full_name": "Admin panel",
+            "balls": 300,
+            "creator": "Suniy",
+            "job": "До нас дошли слухи что Администратор в свом профиле держит важную информацию, но на мой взгляд он собирает слишком много данных",
+            "img": "job_images/web2.png",
+            "link": "web2",
+            "flag": "CTF{F1ag_i5_fl4g}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 8,
+        "fields": {
+            "type": "CRYPTO",
+            "full_name": "Emperor : Vision",
+            "balls": 250,
+            "creator": "Tema",
+            "job": "В один день император увидел видение и о боже, оно написало ему что-то смутно напоминающее фразу....",
+            "img": "job_images/salad.jpg",
+            "link": "vision.txt",
+            "flag": "CTF{I_am_better_off_you}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 9,
+        "fields": {
+            "type": "STEGO",
+            "full_name": "НАДО МЕНЯТЬ",
+            "balls": 50,
+            "creator": "Tema",
+            "job": "Картинка, когда-то была очень красивой, но после добавления на нее надписи она была отравлена и потеряла свою красоту, что это за надпись?",
+            "img": "job_images/tree.jpg",
+            "link": "coffee.png",
+            "flag": "CTF{source_of_coffee}",
+            "show": false
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 10,
+        "fields": {
+            "type": "STEGO",
+            "full_name": "НАДО МЕНЯТЬ",
+            "balls": 100,
+            "creator": "Nasty",
+            "job": "Любовь...",
+            "img": "job_images/hear.jpg",
+            "link": "pop.pptx",
+            "flag": "CTF{LOVE}",
+            "show": false
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 11,
+        "fields": {
+            "type": "OSINT",
+            "full_name": "НАДО МЕНЯТЬ",
+            "balls": 150,
+            "creator": "Suniy",
+            "job": "Недавно задумался об экологической ситуации в нашем районе, и мне стало интересно, а сколько кг макулатуры собрал наш Лицей 393 на сборах в марте 2022. Формат флага : CTF{0000}",
+            "img": "job_images/makulatura.jpg",
+            "link": null,
+            "flag": "CTF{2803}",
+            "show": false
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 12,
+        "fields": {
+            "type": "CRYPTO",
+            "full_name": "Emoji are anythere",
+            "balls": 200,
+            "creator": "Suniy",
+            "job": "Эмодзи всегда недооценивают, а сейчас некоторые считают, что ими пользуются только скуфы и анки, но я например с помощию них шифрую данные",
+            "img": "job_images/emoji.jpg",
+            "link": "emoji.txt",
+            "flag": "CTF{Mne_lenivo_delat_norm_flag}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 13,
+        "fields": {
+            "type": "CRYPTO",
+            "full_name": "Strange text",
+            "balls": 400,
+            "creator": "Suniy",
+            "job": "Мы попросили чат GPT, написать нам текст, но что-то пошло не так, кажется от оставил нам какое-то посление, но я не уверен в этом, может вы что-то найдёте тут",
+            "img": "",
+            "link": "text.txt",
+            "flag": "CTF{H4rD_F14gG}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 14,
+        "fields": {
+            "type": "WEB",
+            "full_name": "НАДО МЕНЯТЬ",
+            "balls": 100,
+            "creator": "Suniy",
+            "job": "Это задание является очень упрощённой версией задания WEB : Странный сайт, поэтому за него очков в разы меньше, но зато он точно решаемый",
+            "img": "job_images/console.png",
+            "link": "web4",
+            "flag": "CTF{Web_I5_Ea5y_:)}",
+            "show": false
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 15,
+        "fields": {
+            "type": "Osint",
+            "full_name": "Ностальгия",
+            "balls": -1000000,
+            "creator": "Sasha",
+            "job": "Помню что в первый раз мы побывали на CTF у нас в лицее, и мне кажется мы что-то там оставили...",
+            "img": "job_images/logo.jpg",
+            "link": null,
+            "flag": "CTF{lalalala88_it's_flag_really}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.userjobs",
+        "pk": 519,
+        "fields": {
+            "user": 1,
+            "job": 9,
+            "date_assigned": "2025-01-09T14:26:34.613Z"
+        }
+    },
+    {
+        "model": "web_tasks.userjobs",
+        "pk": 530,
+        "fields": {
+            "user": 1,
+            "job": 2,
+            "date_assigned": "2025-01-09T20:47:24.721Z"
+        }
+    },
+    {
+        "model": "web_tasks.userjobs",
+        "pk": 531,
+        "fields": {
+            "user": 1,
+            "job": 6,
+            "date_assigned": "2025-01-10T14:55:17.432Z"
+        }
+    }
+]

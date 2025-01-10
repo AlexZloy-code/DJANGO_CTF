@@ -30,7 +30,7 @@ def rating(request):
             sorted_table[i] = (i,) + sorted_table[i] + (int(prochent * 9.5),)
         else:
             sorted_table[i] = (i,) + sorted_table[i] + (0,)
-    return render(request, "main/rating.html", {"table": sorted_table, 'angle': 180 / (len(sorted_table) - 1)})
+    return render(request, "main/rating.html", {"table": sorted_table, 'angle': 180 / (len(sorted_table) - 1) if len(sorted_table) > 1 else 90})
 
 
 @login_required(login_url='/users/login/')
@@ -51,7 +51,7 @@ def rating_pro(request):
             sorted_table[i] = (i,) + sorted_table[i] + (int(prochent * 9.5),)
         else:
             sorted_table[i] = (i,) + sorted_table[i] + (0,)
-    return render(request, "main/rating_pro.html", {"table": sorted_table, 'angle': 180 / (len(sorted_table) - 1)})
+    return render(request, "main/rating_pro.html", {"table": sorted_table, 'angle': 180 / (len(sorted_table) - 1) if len(sorted_table) > 1 else 180})
 
 
 @login_required(login_url='/users/login/')
