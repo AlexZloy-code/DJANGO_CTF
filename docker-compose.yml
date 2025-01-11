@@ -1,11 +1,9 @@
-version: '3.8'
-
 name: "Django_CTF"
 
 services:
   postgres:
     image: postgres:17
-    container_name: postgres
+    container_name: postgres_ctf
     environment:
       POSTGRES_DB: ${DJANGO_POSTGRESQL_NAME}
       POSTGRES_USER: ${DJANGO_POSTGRESQL_USER}
@@ -19,7 +17,7 @@ services:
 
   django:
     build: .
-    container_name: django
+    container_name: django_ctf
     env_file:
       - ./.env
     restart: always
@@ -35,15 +33,15 @@ services:
 
   nginx-prod:
     image: jonasal/nginx-certbot:latest
-    container_name: nginx-prod
+    container_name: nginx-prod_ctf
     environment:
       DEBUG: ${CTF_CERTBOT_DEBUG}
       STAGING: ${CTF_CERTBOT_STAGING}
       CERTBOT_EMAIL: ${CTF_CERTBOT_EMAIL}
     restart: always
     ports:
-      - "80:80"
-      - "443:443"
+      - "8080:8080"
+      - "8443:8443"
     volumes:
       - ./for_docker/nginx-confs/Django_CTF_prod.conf:/etc/nginx/user_conf.d/Django_CTF.conf
       - ./for_docker/nginx_certificates:/etc/letsencrypt

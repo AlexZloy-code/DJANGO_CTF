@@ -1,4 +1,4 @@
-FROM python:3.12.4-slim
+GNU nano 7.2                                           Dockerfile                                                     FROM python:3.12.4-slim
 
 RUN apt update
 RUN apt install gettext -y
