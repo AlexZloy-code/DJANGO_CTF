@@ -2,7 +2,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
-from Django_CTF.views import custom_404_view
+from DJANGO_CTF.views import custom_404_view
 
 handler404 = custom_404_view 
 

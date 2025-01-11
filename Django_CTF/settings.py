@@ -16,7 +16,8 @@ ENCRYPTION_KEY = os.getenv(
     "dsEa3e6lF983WPH88NsSS9A0HGCIK5xA",
 ).encode()
 
-DEBUG = env_validator(os.getenv("DJANGO_DEBUG", "false"))
+# DEBUG = env_validator(os.getenv("DJANGO_DEBUG", "true"))
+DEBUG = True
 
 ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1").split(
     ","
@@ -55,7 +56,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-ROOT_URLCONF = "Django_CTF.urls"
+ROOT_URLCONF = "DJANGO_CTF.urls"
 
 TEMPLATES = [
     {
@@ -83,7 +84,7 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-WSGI_APPLICATION = "Django_CTF.wsgi.application"
+WSGI_APPLICATION = "DJANGO_CTF.wsgi.application"
 
 
 # Database
