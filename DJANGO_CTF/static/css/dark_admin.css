@@ -1,0 +1,78 @@
+/* invert-colors.css */
+
+/* Стили для навигационной панели */
+.navbar {
+    background-color: #333; /* Светлая панель навигации */
+}
+
+.navbar .navbar-brand,
+.navbar .navbar-nav .nav-link {
+    color: #000000; /* Черный текст на панели навигации */
+}
+
+.navbar .navbar-brand:hover,
+.navbar .navbar-nav .nav-link:hover {
+    color: #007bff; /* Цвет текста при наведении */
+}
+
+/* Стили для таблиц */
+.table {
+    background-color: #ffffff; /* Белый фон таблиц */
+    color: #000000; /* Черный текст в таблицах */
+}
+
+.table th {
+    background-color: #e9ecef; /* Светлый фон заголовков таблиц */
+    color: #000000; /* Цвет текста заголовка */
+}
+
+.table td {
+    border-color: #dee2e6; /* Цвет границ ячеек таблиц */
+}
+
+.content {
+    background-color: #000000;
+}
+
+/* Стили для кнопок */
+.btn-primary {
+    background-color: #007bff; /* Цвет кнопок */
+    border-color: #007bff; /* Цвет границ кнопок */
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Цвет кнопок при наведении */
+}
+
+/* Стили для форм и полей ввода */
+.form-control {
+    background-color: #ffffff; /* Белый фон полей ввода */
+    color: #000000; /* Черный текст в полях ввода */
+    border-color: #ced4da; /* Цвет границ полей ввода */
+}
+
+.form-control:focus {
+    background-color: #333; /* Белый фон при фокусе */
+    border-color: #007bff; /* Цвет границ при фокусе */
+}
+
+/* Стили для сообщений об ошибках и уведомлениях */
+.alert {
+    background-color: #dc3545; /* Красный фон для ошибок */
+    color: white;
+}
+
+.alert-success {
+    background-color: #28a745; /* Зеленый фон для успеха */
+}
+
+/* custom_admin.css */
+body {
+    background-color: #333;  /* Замените на нужный вам цвет */
+}
+
+/* Пример изменения цвета фона заголовка */
+.header {
+    background-color: #333;  /* Замените на нужный вам цвет */
+    color: rgb(255, 255, 255);  /* Цвет текста заголовка */
+}
