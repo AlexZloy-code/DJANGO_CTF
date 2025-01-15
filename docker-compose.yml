@@ -5,9 +5,9 @@ services:
     image: postgres:17
     container_name: postgres_ctf
     environment:
-      POSTGRES_DB: ${DJANGO_POSTGRESQL_NAME}
-      POSTGRES_USER: ${DJANGO_POSTGRESQL_USER}
-      POSTGRES_PASSWORD: ${DJANGO_POSTGRESQL_PASSWORD}
+      POSTGRES_DB: ${DJANG_CTF_POSTGRESQL_NAME}
+      POSTGRES_USER: ${DJANGO_CTF_POSTGRESQL_USER}
+      POSTGRES_PASSWORD: ${DJANGO_CTF_POSTGRESQL_PASSWORD}
     restart: always
     volumes:
       - ./for_docker/postgres_data:/var/lib/postgresql/data
