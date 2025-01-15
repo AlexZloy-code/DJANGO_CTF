@@ -58,11 +58,9 @@ body {
     font-size:1.25rem;
 }
 .CTF{
-    position: flex;
+    position: fixed;
     font-size: 25px;
-    margin: 0 0.5%;
     margin-left: 10px;
-    height: 10%;
     color: #ffffff;
     background-color: #00000020;
     padding: 0.5%;

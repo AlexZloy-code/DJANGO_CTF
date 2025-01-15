@@ -17,7 +17,7 @@
       <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}} {{balls}}</li>
     {% endfor %}
   </ul>
-  <table>
+  <table style='margin: 1000px 0 20% 0'>
     <tr><th>Место</th><th>Имя</th><th>баллы</th></tr>
     {% for id, user, balls, size in table %}
         <div class="col-md6 border rounded"></div>
@@ -27,10 +27,3 @@
   </table>
 </body>
 {% endblock %}
-    <!--
-    {% for id, user, balls, show, size in table %}
-      {% if show %}
-        <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}}     {{balls}}</li>
-      {% endif %}
-    {% endfor %}
-    -->
