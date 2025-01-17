@@ -48,7 +48,6 @@ h3 {
 }
 ul {
   --m: calc(.5*(var(--n) - 1));
-  place-self: center;
 }
 
 li {
