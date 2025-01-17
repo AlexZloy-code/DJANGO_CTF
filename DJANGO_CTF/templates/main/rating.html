@@ -14,7 +14,11 @@
   <h3>Balls</h3>
   <ul style="--n: 1; --angle: {{angle}}">
     {% for id, user, balls, size in table %}
-      <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}} {{balls}}</li>
+      {% if request.user.username == user %}
+        <li style="--i: {{id}}; --v: {{size}}; background: #16db51">{{user}} {{balls}}</li>
+      {% else %}
+        <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}} {{balls}}</li>
+      {% endif %}
     {% endfor %}
   </ul>
 </body>
