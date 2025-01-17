@@ -3,4 +3,5 @@
 
 {% block extrastyle %}
     <link rel="stylesheet" type="text/css" href="{% static 'css/dark_admin.css' %}">
+    {% csrf_token %}
 {% endblock %}
