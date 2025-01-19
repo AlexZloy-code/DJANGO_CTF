@@ -1,5 +1,5 @@
 """
-ASGI config for Django_CTF project.
+ASGI config for DJANGO_CTF project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
