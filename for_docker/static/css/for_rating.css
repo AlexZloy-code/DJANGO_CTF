@@ -1,0 +1,84 @@
+@property --v {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+body {
+  box-sizing: border-box;
+  overflow: hidden;
+  font: 1.25em/1.5 ubuntu, rebuchet ms, sans-serif;
+}
+
+h3, ul, li {
+  display: grid;
+  grid-area: 1/1;
+  color: black;
+  margin: 0 0 0 405px;
+}
+
+h3 {
+  z-index: 0;
+  place-content: center;
+  width: 140px;
+  height: 140px;
+  margin: 0 0 -85px 780px;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 15px rgba(50, 50, 50, 0.5);
+  background: darkslategrey;
+  color: gainsboro;
+  text-transform: capitalize;
+  animation: disc 1s cubic-bezier(0.35, 1.65, 0.65, 1) 1s both
+}
+
+@keyframes disc {
+  0% {
+
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(0.9);
+  }
+}
+@keyframes text {
+  0% {
+    color: transparent;
+    text-indent: -7em;
+  }
+}
+ul {
+  --m: calc(.5*(var(--n) - 1));
+}
+
+li {
+  z-index: -1;
+  --o0: calc((35 + var(--v) / 15)*1%);
+  --o1: calc(var(--o0) - .5em);
+  padding-left: calc(3.5em + .5em);
+  width: 700px;
+  height: 30px;
+  transform-origin: 0;
+  transform: rotate(calc((var(--i) - var(--m)) * var(--angle) * 1deg));
+  text-transform: uppercase;
+  clip-path: polygon(0 0, 0 100%, var(--o1) 100%, var(--o0) 50%, var(--o1) 0);
+  counter-reset: v var(--v);
+  animation: arrw 2s ease-in 3s both, text 1s ease-out 5s both, v calc(var(--v)*.002s) linear 5s both;
+  
+}
+li::after {
+  content: " " counter(v) "%";
+}
+
+@keyframes arrw {
+  0% {
+    transform: rotate(-90deg) rotatey(90deg);
+  }
+  50% {
+    transform: rotate(-90deg);
+  }
+}
+@keyframes v {
+  0% {
+    --v: 0;
+  }
+}

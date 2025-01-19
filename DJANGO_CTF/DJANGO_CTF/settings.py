@@ -32,7 +32,7 @@ CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-SITE_URL = os.getenv("DJANGO_CTF_SITE_URL", "http://127.0.0.1:8000")
+SITE_URL = os.getenv("DJANGO_CTF_SITE_URL", "http://127.0.0.1:8000/1")
 
 AUTH_USER_MODEL = "users.User"
 # Application definition
@@ -82,9 +82,9 @@ TEMPLATES = [
 
 STATIC_ROOT = BASE_DIR / "static"
 
-STATIC_URL = "/static/"
-
 ADMIN_MEDIA_PREFIX = '/static/admin/'
+
+STATIC_URL = "/static/"
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
