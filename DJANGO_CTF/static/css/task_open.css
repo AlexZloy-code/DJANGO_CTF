@@ -2,7 +2,7 @@
   user-select: none;
   width: 70%;
   height: 600px;
-  margin: 5% 0px 0px 15%;
+  margin: 5% 0 0 15%;
   border: 1px solid #ffffff22;
   background-color: #282c34;
   background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
@@ -17,20 +17,19 @@
   padding: 1rem;
 }
 .taskImage{
-  margin: 0 0 0 -1.5%;
   border-radius: .5rem;
   width: 320px;
   height: 320px;
   object-fit: cover;
 }
 .taskname{
-display: flex;
-position: absolute;
-left: 350px;
-top: 10px;
-color: gray;
-font-size: 40px;
-width: 1000px;
+  display: flex;
+  position: absolute;
+  left: 350px;
+  top: 10px;
+  color: gray;
+  font-size: 40px;
+  width: 1000px;
 }
 .creator{
   position: absolute;

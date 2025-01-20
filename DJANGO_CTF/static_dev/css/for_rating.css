@@ -14,7 +14,7 @@ h3, ul, li {
   display: grid;
   grid-area: 1/1;
   color: black;
-  margin: 0 0 0 405px;
+  margin: 0 0 0 20vw;
 }
 
 h3 {
@@ -22,7 +22,7 @@ h3 {
   place-content: center;
   width: 140px;
   height: 140px;
-  margin: 0 0 -85px 780px;
+  margin: 0 0 -85px 38.5vw;
   border-radius: 50%;
   box-shadow: inset 0 0 0 15px rgba(50, 50, 50, 0.5);
   background: darkslategrey;
