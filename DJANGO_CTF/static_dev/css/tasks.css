@@ -24,8 +24,8 @@ hr{
 }
 .taskImage{
   border-radius: .5rem;
-  width: 16vw;
-  height: 16vw;
+  width: 320px;
+  height: 320px;
 }    
 .taskInfo{
   display: flex;
