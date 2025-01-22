@@ -39,7 +39,7 @@
         <p>{{job.job}}</p>
     </div>
     {% if job.link %}
-        <button class="button_download" onclick="window.location.href = '/tasks/{{job.link}}'">
+        <button class="button_download" onclick="window.location.href = '/tasks/{{job.link}}/'">
             {% if '.' in job.link %}
                 Скачать файл задания
             {% else %}
