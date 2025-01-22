@@ -25,15 +25,12 @@ class CustomUserAdmin(UserAdmin):
     inlines = [UserJobsInline]
     form = UserAdminForm
 
-    fieldsets = (
-        (None, {"fields": ('username', 'password', 'fine', 'show')}),
-    )
+    fieldsets = ((None, {"fields": ("username", "password", "fine", "show")}),)
 
-    list_display = ('username', 'password', 'fine', 'show')
-    search_fields = ('username', 'fine', 'show')
+    list_display = ("username", "password", "fine", "show")
+    search_fields = ("username", "fine", "show")
 
     actions = [mark_users_as_completed]
-
 
     def save_model(self, request, obj, form, change):
         super().save_model(request, obj, form, change)

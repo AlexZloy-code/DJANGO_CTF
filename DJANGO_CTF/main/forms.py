@@ -9,4 +9,4 @@ class TryForm(forms.Form):
 class JobsForm(forms.ModelForm):
     class Meta:
         model = Jobs
-        fields = ['type', 'full_name', 'balls', 'creator', 'job', 'img', 'link', 'flag']
+        fields = ["type", "full_name", "balls", "creator", "job", "img", "link", "flag"]

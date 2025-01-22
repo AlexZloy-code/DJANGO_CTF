@@ -7,14 +7,15 @@ from django.urls import reverse
 from django.contrib.auth.models import User
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url="/users/login/")
 def add_user(request, command):
     if request.user.is_superuser:  # Проверка на администраторов
         User.objects.get_or_create(username=command)
+
     return render(request, "CTF.html", {"title": "CTF"})
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url="/users/login/")
 def delete_user(request, command):
     if request.user.is_superuser:  # Проверка на администраторов
         try:
@@ -22,12 +23,14 @@ def delete_user(request, command):
             user_to_delete.delete()
         except User.DoesNotExist:
             return HttpResponseNotFound("User not found")
+
     return render(request, "CTF.html", {"title": "CTF"})
 
 
-@login_required(login_url='/users/login/')
+@login_required(login_url="/users/login/")
 def logout_view(request):
     auth_logout(request)
+
     return redirect(reverse("main:main_website"))
 
 

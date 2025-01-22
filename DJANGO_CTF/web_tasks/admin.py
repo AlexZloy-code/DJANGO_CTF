@@ -18,14 +18,29 @@ class JobsAdmin(admin.ModelAdmin):
     form = JobsForm
 
     fieldsets = (
-        (None, {"fields": ('type', 'full_name', 'balls', 'creator', 'job', 'img', 'link', 'flag', 'show')}),
+        (
+            None,
+            {
+                "fields": (
+                    "type",
+                    "full_name",
+                    "balls",
+                    "creator",
+                    "job",
+                    "img",
+                    "link",
+                    "flag",
+                    "show",
+                )
+            },
+        ),
     )
-    
-    list_display = ('full_name', 'creator', 'balls', 'type', 'show')
 
-    search_fields = ('full_name', 'creator')
+    list_display = ("full_name", "creator", "balls", "type", "show")
 
-    list_filter = ('type', 'show')
+    search_fields = ("full_name", "creator")
+
+    list_filter = ("type", "show")
 
     actions = [mark_jobs_as_completed]
 

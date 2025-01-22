@@ -8,38 +8,58 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Jobs',
+            name="Jobs",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('type', models.CharField(max_length=255, null=True)),
-                ('full_name', models.CharField(max_length=255, null=True)),
-                ('balls', models.IntegerField(null=True)),
-                ('creator', models.CharField(max_length=255, null=True)),
-                ('job', models.TextField(null=True)),
-                ('img', models.ImageField(null=True, upload_to='job_images/')),
-                ('link', models.URLField(blank=True, null=True)),
-                ('flag', models.CharField(max_length=255, null=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("type", models.CharField(max_length=255, null=True)),
+                ("full_name", models.CharField(max_length=255, null=True)),
+                ("balls", models.IntegerField(null=True)),
+                ("creator", models.CharField(max_length=255, null=True)),
+                ("job", models.TextField(null=True)),
+                ("img", models.ImageField(null=True, upload_to="job_images/")),
+                ("link", models.URLField(blank=True, null=True)),
+                ("flag", models.CharField(max_length=255, null=True)),
             ],
             options={
-                'verbose_name': 'Работа',
-                'verbose_name_plural': 'Работы',
+                "verbose_name": "Работа",
+                "verbose_name_plural": "Работы",
             },
         ),
         migrations.CreateModel(
-            name='UserJobs',
+            name="UserJobs",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('date_assigned', models.DateTimeField(auto_now_add=True)),
-                ('job', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='main.jobs')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("date_assigned", models.DateTimeField(auto_now_add=True)),
+                (
+                    "job",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE, to="main.jobs"
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Работа - команда',
-                'verbose_name_plural': 'Работы - команды',
+                "verbose_name": "Работа - команда",
+                "verbose_name_plural": "Работы - команды",
             },
         ),
     ]

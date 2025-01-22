@@ -24,9 +24,7 @@ ENCRYPTION_KEY = os.getenv(
 
 DEBUG = env_validator(os.getenv("DJANGO_CTF_DEBUG", "true"))
 
-ALLOWED_HOSTS = os.getenv("DJANGO_CTF_ALLOWED_HOSTS", "127.0.0.1").split(
-    ","
-)
+ALLOWED_HOSTS = os.getenv("DJANGO_CTF_ALLOWED_HOSTS", "127.0.0.1").split(",")
 
 CSRF_TRUSTED_ORIGINS = [f"https://{x}" for x in ALLOWED_HOSTS]
 
@@ -65,16 +63,16 @@ ROOT_URLCONF = "DJANGO_CTF.urls"
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
-                'django.template.context_processors.media',
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
+                "django.template.context_processors.media",
             ],
         },
     },
@@ -82,20 +80,18 @@ TEMPLATES = [
 
 STATIC_ROOT = BASE_DIR / "static"
 
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = "/static/admin/"
 
 STATIC_URL = "/static/"
 
-STATICFILES_FINDERS = (
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-)
+STATICFILES_FINDERS = ("django.contrib.staticfiles.finders.FileSystemFinder",)
 
 STATICFILES_DIRS = [
     BASE_DIR / "static_dev",
 ]
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = "/media/"
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 WSGI_APPLICATION = "DJANGO_CTF.wsgi.application"
 

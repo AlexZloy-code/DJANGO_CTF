@@ -22,11 +22,7 @@ class Command(BaseCommand):
             "4pNWn0;3(!6zKka7B74H",
         )
 
-        if (
-            not get_user_model()
-            .objects.filter(username=superuser_name)
-            .exists()
-        ):
+        if not get_user_model().objects.filter(username=superuser_name).exists():
             get_user_model().objects.create_superuser(
                 username=superuser_name,
                 email=superuser_email,
