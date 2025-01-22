@@ -572,7 +572,7 @@
             "job": "Когда-то я делил числа в питоне и не понимал, почему при делении результатом является всегда дробное число, но потом я посмотрел на полное число и у меня появилось еще больше вопросов...(что я увидел в конце)",
             "img": "job_images/py.jpg",
             "link": null,
-            "flag": "CTF{1}",
+            "flag": "CTF{4}",
             "show": true
         }
     },
@@ -676,7 +676,7 @@
             "creator": "Suniy",
             "job": "Мы попросили чат GPT, написать нам текст, но что-то пошло не так, кажется от оставил нам какое-то посление, но я не уверен в этом, может вы что-то найдёте тут",
             "img": "",
-            "link": "text.txt",
+            "link": "AI_answer.txt",
             "flag": "CTF{H4rD_F14gG}",
             "show": true
         }
@@ -702,7 +702,7 @@
         "fields": {
             "type": "Osint",
             "full_name": "Ностальгия",
-            "balls": -1000000,
+            "balls": 200,
             "creator": "Sasha",
             "job": "Помню что в первый раз мы побывали на CTF у нас в лицее, и мне кажется мы что-то там оставили...",
             "img": "job_images/logo.jpg",
@@ -711,6 +711,152 @@
             "show": true
         }
     },
+
+
+
+    {
+        "model": "web_tasks.jobs",
+        "pk": 16,
+        "fields": {
+            "type": "WEB",
+            "full_name": "Brute_Forse",
+            "balls": 200,
+            "creator": "Suniy",
+            "job": "Мало того что этот сайт очень не защищён, так он ещё и помогает юным хакерам, получить всю информацию выдавая им вердикты... Такие возможности нельзя упускать, получите флаг любой ценой, если сайт сломается, не беда обратитесь к организаторам, мы всё починим, но прогресс не вернём...",
+            "img": "job_images/brute-force.jpg",
+            "link": "http://v-chat.ru:8000/BruteForse",
+            "flag": "CTF{Brut3F0rSE_I5_3asy_But_IF_th3_fl4g_iS_ver7_and_V3ry_dlinniy_and_slojniy}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 17,
+        "fields": {
+            "type": "WEB",
+            "full_name": "Brute_Forse 2.0",
+            "balls": 400,
+            "creator": "Suniy",
+            "job": "Кажется здесь пароли шифруются, но всё равно можно разгадать как... Удачи, я в вас верю",
+            "img": "job_images/brute-force.jpg",
+            "link": "http://v-chat.ru:8000/BruteForse_v2_0",
+            "flag": "CTF{Flag_Ia_sdelal_easychniy_no_nado_bulo_podumat!}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 18,
+        "fields": {
+            "type": "CRYPTO",
+            "full_name": "Music is wonderfull",
+            "balls": 300,
+            "creator": "Suniy",
+            "job": "Название говорит само за себя, музыка прекрасна, но чтобы её полушать ещё надо её найти, а это бывает очень сложно... P.s. Слушать музыку не советую",
+            "img": "job_images/Sound.png",
+            "link": "music.txt",
+            "flag": "CTF{SPEctore!}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 19,
+        "fields": {
+            "type": "REVERSE",
+            "full_name": "Reverse nachalo",
+            "balls": 100,
+            "creator": "Suniy",
+            "job": "Этот reverse, это некий базис без которого дальше никуда, поэтому он вроде инетересный, а вроде и простой, но очень поучительный",
+            "img": "",
+            "link": "Easy_reverse.zip",
+            "flag": "CTF{You've_BEEn_TrO11ed}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 20,
+        "fields": {
+            "type": "REVERSE",
+            "full_name": "Reverse maybe intresting",
+            "balls": 200,
+            "creator": "Suniy",
+            "job": "6-е и 7-е классы интернет вам в помощь, но куда же програмы без влоенных списков и матриц (не путайте с математическими, тут всё проще :) ), а всем остальным это не должно показааться сложным, просто много раз перепроверяйте код",
+            "img": "",
+            "link": "crypter.zip",
+            "flag": "CTF{MNE_kazetsa_cHt0_Flagi_ochen_kopooootkie}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 21,
+        "fields": {
+            "type": "REVERSE",
+            "full_name": "Reverse maybe hard",
+            "balls": 300,
+            "creator": "Suniy",
+            "job": "Говорят это задание никто не решил, но может потому что у создателей много работы и они просто не успели, кто знает, обязательно похвастайтесь решением...",
+            "img": "",
+            "link": "osyptverse.zip",
+            "flag": "CTF{Ento-Toze_IA__SCHITAY_REVErse_TAsk}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 22,
+        "fields": {
+            "type": "OSINT",
+            "full_name": "Maps are helping anywhere",
+            "balls": 300,
+            "creator": "Suniy",
+            "job": "Вы только представте как сложно было без онлайн навигаторов и карт, а ведь не так уж и много времени прошло с момента их появления. Но все мы понимаем, что сразу идеально не получится, и мы нашли пару недочётов, так что поищите это место, а точнее незамыленный номер этой машины. Формат флага: CTF{0000_A000AA_00}",
+            "img": "job_images/maps.jpg",
+            "link": "Znakomoe_mesto.jpg",
+            "flag": "CTF{2010_Т825АТ_97}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 23,
+        "fields": {
+            "type": "OSINT",
+            "full_name": "Formulas are easy",
+            "balls": 300,
+            "creator": "Suniy",
+            "job": "Эта формула очень известна, но в очень узких кругах, но это не мешает быть ей очень нужной, но далекооо не всем, вообщем найдите мне кому принадлежит эта формула. Формат флага: CTF{Вид_этого_каго-то}",
+            "img": "job_images/formuls.jpg",
+            "link": "formula.jpg",
+            "flag": "CTF{Alces_alces}",
+            "show": true
+        }
+    },
+    {
+        "model": "web_tasks.jobs",
+        "pk": 24,
+        "fields": {
+            "type": "JOY",
+            "full_name": "Telegram bot can help you",
+            "balls": 150,
+            "creator": "Nasty",
+            "job": "Здесь будет текст от Насти",
+            "img": "job_images/tg_bot.jpg",
+            "link": "https://t.me/CTF393bot",
+            "flag": "CTF{Robots_Are_Help1ng_anythere}",
+            "show": true
+        }
+    },
+
+
+
+
+
+
+
+
     {
         "model": "web_tasks.userjobs",
         "pk": 519,

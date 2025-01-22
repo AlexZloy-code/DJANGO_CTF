@@ -42,7 +42,7 @@
 <script>
     let flag = 0
     setInterval(function() {
-        if (window.innerWidth <= 1200 || window.innerWidth >= 2000) {
+        if (window.innerWidth <= 1200 || window.innerWidth >= 2400) {
             document.body.innerHTML = '<div style="user-select: none;width: 90vw;height: 85vh;margin: 5% 0px 0px 5%;border: 1px solid #ffffff22;background-color: #282c34;background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);box-shadow: 0 7px 20px 5px #00000088;border-radius: .7rem;backdrop-filter: blur(7px);overflow: hidden;font-size: 7vw;">Просмотр при данном маштабировании не поддерживается</div>';
             flag = 1
         }
