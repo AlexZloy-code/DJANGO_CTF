@@ -14,11 +14,13 @@ p {
   margin-top: 0;
   margin-bottom: 1rem
 }
+
 a {
   color:#007bff;
   text-decoration: none;
   background-color: transparent
 }
+
 button,
 input{
   margin:0;
@@ -27,14 +29,12 @@ input{
   line-height: inherit
 }
 
-h1{
-  font-size: 2000%;
-}
 hr {
   margin-bottom: 3%;
   border: 0;
   border-top: 1px solid rgba(0,0,0,.1)
 }
+
 .container {
   width: 90%;
   padding-right: 2%;
@@ -43,19 +43,19 @@ hr {
   margin-left: auto
 }
 
-
-
 .bg{
   position: fixed;
   top: 50%;
   left: 48%;
   z-index: -1;
   transform: translate(-50%, -50%);
-  h1{
+  
+}
+
+h1{
     font-size: 2000%;
     filter: opacity(0.5);
     user-select: none;
-  }
 }
 
 .un_authenticated{
@@ -63,7 +63,8 @@ hr {
 }
 
 .tasks_text{
+  text-align: center;
   color: white;
   font-size: 100px;
-  margin: 0 0 0 40%;
+  margin: 0 0 0 0;
 }
