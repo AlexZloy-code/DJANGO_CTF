@@ -27,7 +27,7 @@ class CustomUserAdmin(UserAdmin):
 
     fieldsets = ((None, {"fields": ("username", "password", "fine", "show")}),)
 
-    list_display = ("username", "password", "fine", "show")
+    list_display = ("username", "fine", "show")
     search_fields = ("username", "fine", "show")
 
     actions = [mark_users_as_completed]
