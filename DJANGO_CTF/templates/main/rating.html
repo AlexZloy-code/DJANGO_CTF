@@ -3,6 +3,7 @@
 
 {% block content %}
 <head>
+  <meta http-equiv="refresh" content="100">
   <meta charset="UTF-8">
   <link rel="stylesheet" href="{% static 'css/for_rating.css' %}">
 </head>
@@ -22,10 +23,3 @@
   </ul>
 </body>
 {% endblock %}
-    <!--
-    {% for id, user, balls, show, size in table %}
-      {% if show %}
-        <li style="--i: {{id}}; --v: {{size}}; background: #f2d786">{{user}}     {{balls}}</li>
-      {% endif %}
-    {% endfor %}
-    -->

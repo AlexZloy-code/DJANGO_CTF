@@ -20,7 +20,7 @@ def tasks(request):
     for i in range(len(jobs)):
         jobs[i].flag = "Not cheating"
 
-    for user in list(User.objects.filter(show=True)):
+    for user in list(User.objects.all()):
         balls = user.fine + sum(job.balls for job in user.jobs.all() if job.show)
         users_with_balls.append((user.username, balls))
 
