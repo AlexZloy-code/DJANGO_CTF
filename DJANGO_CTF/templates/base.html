@@ -12,8 +12,7 @@
     <link rel="shortcut icon" href='{% static "img/favicons/icon.ico" %}'>
 </head>
 <body>
-    <form action="" method="post">
-        {% csrf_token %}
+    {% csrf_token %}
         <nav class="menu">
             {% if request.user.is_authenticated %}
                 <div class="fisrt_part">
@@ -33,14 +32,27 @@
                     
                 </div>
                 <div class="third_part">
-                    <input class="input_flag" name="input_flag" placeholder="Flag: CTF{...}" type="text" value="" autocomplete="off">
-                    <input class="button_try" type="submit" value="TRY">
+                    <form action="" method="post">
+                        <input class="input_flag" name="input_flag" placeholder="Flag: CTF{...}" type="text" value="" autocomplete="off">
+                        <input class="button_try" type="submit" value="TRY">
+                    </form>
+                </div>
+                <div class="forth_part">
                     <a class="CTF" href="/">CTF</a>
+                    <button id="themeToggle" class='themeToggle'>☽</button>
+                </div>
             {% else %}
-                <a class="invite" href="/users/login/">Войти</a>
+                <div class="fisrt_part">
+                    <a class="invite" href="/users/login/">Войти</a>
+                </div>
+                <div class="second_part"></div>
+                <div class="third_part"></div>
+                <div class="forth_part">
+                    <button id="themeToggle" class='themeToggle'>☽</button>
+                </div>
             {% endif %}
         </nav>
-    </form>
+    
 
     <main role="main" class="container">
         {% block content %}
@@ -60,6 +72,19 @@
                 }
             }
         }, 10);
-    </script> 
+    </script>
+    <script>
+        document.getElementById('themeToggle').addEventListener('click', function() {
+            const currentTheme = document.body.className;
+            if (currentTheme === 'light-theme') {
+                document.body.className = 'dark-theme';
+                document.getElementById("themeToggle").innerHTML = '☽'
+            } else {
+                document.body.className = 'light-theme';
+                document.getElementById("themeToggle").innerHTML = '☀'
+            }
+        });
+    </script>
+    </script>
 </body>
 </html>

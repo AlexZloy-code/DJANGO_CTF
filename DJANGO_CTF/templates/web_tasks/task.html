@@ -17,28 +17,28 @@
         <div class="creator">Creator {{job.creator}}</div>
         <div class="taskInfo">
             <div class="balls">{{job.balls}} очков</div>
-            <div class="is_finish">
-                {% for user_job in job.userjobs_set.all %}
-                    {% if request.user == user_job.user %}
+            {% for user_job in job.userjobs_set.all %}
+                {% if request.user == user_job.user %}
+                    <div class="is_finish">
                         Сделано
-                    {% endif %}
-                {% endfor %}
-            </div>
-            <div class="count_finish">
-                {% if job.userjobs_set.count %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+            {% if job.userjobs_set.count %}
+                <div class="count_finish">
                     {% if job.userjobs_set.count == 1 %}
                         Сделано у {{job.userjobs_set.count}} команды
                     {% else %}
                         Сделано у {{job.userjobs_set.count}} команд
                         {% endif %}
-                {% endif %}
-            </div>
+                </div>
+            {% endif %}
         </div>
     </div>
     <div class="text">
-        <p>{{job.job}}</p>
+        {{ job.job|safe }}
     </div>
-    {% if "http://" in job.link %}
+    {% if "http" in job.link %}
         <button class="button_download" onclick="window.location.href = '{{job.link}}/'">
             Перейти по ссылке
         </button>
@@ -51,7 +51,9 @@
             {% endif %}
         </button>
     {% endif %}
-    
+</body>
+</html>
+
 </div>
 {% endblock %}
 https://images.unsplash.com/photo-1621075160523-b936ad96132a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80
