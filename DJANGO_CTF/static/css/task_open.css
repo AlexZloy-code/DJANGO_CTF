@@ -1,6 +1,6 @@
 .Task_open{
   user-select: none;
-  width: 80%;
+  width: 70vw;
   height: 75vh;
   margin: 5% 0 0 10%;
   border: 1px solid #ffffff22;
@@ -64,11 +64,23 @@
   margin-right: .2rem;
 }
 p{
-    margin: 0px 2vw 0 2vw;
+  margin: 0px 2vw 8vw 2vw;
+  
+}
+.format_flag{
+  position: absolute;
+  left: 2vw;
+  top: 23vw;
+  color: #ee83e5;
+}
+.hint{
+  position: absolute;
+  left: 2vw;
+  top: 29vw;
 }
 .button_download{
   width: 20%;
-  margin: 7% 0px 0px 77%;
+  margin: 0 0 0  77%;
   border: 1px solid #ffffff22;
   background-color: #282c34;
   background: #858a93;

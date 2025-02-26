@@ -59,7 +59,6 @@ li {
   height: 30px;
   transform-origin: 0;
   transform: rotate(calc((var(--i) - var(--m)) * var(--angle) * 1deg));
-  text-transform: uppercase;
   clip-path: polygon(0 0, 0 100%, var(--o1) 100%, var(--o0) 50%, var(--o1) 0);
   counter-reset: v var(--v);
   animation: arrw 2s ease-in 3s both, text 1s ease-out 5s both, v calc(var(--v)*.002s) linear 5s both;
