@@ -1,0 +1,109 @@
+body{
+  --background-color: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  --background-color-button: #858a93;
+  --text_color: #ffffff;
+  transition: --background-color 0.8s ease;
+}
+
+body.light-theme {
+  --background-color: #ffffff;
+  --background-color-button: #ffffff;
+  --text_color: #000000;
+}
+
+body.dark-theme {
+  --background-color: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  --background-color-button: #858a93;
+  --text_color: #ffffff;
+}
+
+.Task_open{
+  user-select: none;
+  width: 70vw;
+  height: 75vh;
+  margin: 5% 0 0 10%;
+  border: 1px solid #ffffff22;
+  background-color: #282c34;
+  background: var(--background-color);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: .7rem;
+  backdrop-filter: blur(7px);
+  overflow: hidden;
+}
+.info{
+  display: flex;
+  width: 100%;
+  padding: 1rem;
+}
+.taskImage{
+  border-radius: .5rem;
+  width: 17vw;
+  height: 17vw;
+  object-fit: cover;
+}
+.taskname{
+  display: flex;
+  position: absolute;
+  left: 19vw;
+  top: 1vw;
+  color: gray;
+  font-size: 40px;
+}
+.creator{
+  position: absolute;
+  left: 19vw;
+  top: 5vw;
+  display: flex;
+  color: cyan;
+  font-size: 25px;
+}
+.taskInfo{
+  justify-content: space-between;
+  align-items: center;
+}
+.balls{
+  position: absolute;
+  left: 19vw;
+  top: 16vw;
+  color: #ee83e5;
+  font-weight: 700;
+}
+.is_finish{
+  position: absolute;
+  left: 28vw;
+  top: 16vw;
+  color: #a89ec9;
+  margin-right: .2rem;
+}
+.count_finish{
+  position: absolute;
+  left: 36vw;
+  top: 16vw;
+  color: #a89ec9;
+  margin-right: .2rem;
+}
+p{
+  margin: 0px 2vw 8vw 2vw;
+  color: var(--text_color)
+}
+.format_flag{
+  position: absolute;
+  left: 2vw;
+  top: 23vw;
+  color: #ee83e5;
+}
+.hint{
+  position: absolute;
+  left: 2vw;
+  top: 29vw;
+}
+.button_download{
+  width: 20%;
+  margin: 0 0 0  77%;
+  border: 1px solid #ffffff22;
+  background-color: #858a93;
+  background: var(--background-color-button);
+  box-shadow: 0 7px 20px 5px #00000088;
+  border-radius: .7rem;
+  backdrop-filter: blur(7px);
+}
