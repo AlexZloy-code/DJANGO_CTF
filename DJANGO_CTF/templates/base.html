@@ -13,6 +13,59 @@
 
 <body onload="myFunction()">
     {% csrf_token %}
+
+    {% if messange %}
+    <div id="flag">
+        <style>
+            #flag_status {
+                position: fixed;
+                top: -100px;
+                left: 50%;
+                transform: translateX(-50%);
+                color: white;
+                padding: 15px 30px;
+                border-radius: 5px;
+                font-size: 18px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+                transition: top 0.5s ease;
+                z-index: 1000;
+            }
+
+            #flag_status.show {
+                top: 20px;
+            }
+        </style>
+
+        {% if messange == 'incorrect' %}
+        <div id="flag_status" style="background-color: #FF0000">Неверный флаг</div>
+        {% elif messange == 'correct' %}
+        <div id="flag_status" style="background-color: #4CAF50">Флаг принят</div>
+        {% elif messange == 'repeat' %}
+        <div id="flag_status" style="background-color: #FFA500">Флаг уже принимался</div>
+        {% elif messange == 'secsess' %}
+        <div id="flag_status" style="background-color: #4CAF50">Команда успешно обработана</div>
+        {% endif %}
+
+        <script>
+            const flag_status = document.getElementById('flag_status');
+
+            setTimeout(() => {
+                flag_status.classList.add('show');
+
+                setTimeout(() => {
+                    flag_status.classList.remove('show');
+                }, 5000);
+
+                setTimeout(() => {
+                    document.getElementById("flag").innerHTML = ''
+                }, 9000);
+
+            }, 100);
+
+        </script>
+    </div>
+    {% endif %}
+
     <nav class="menu">
         {% if request.user.is_authenticated %}
         <div class="fisrt_part">

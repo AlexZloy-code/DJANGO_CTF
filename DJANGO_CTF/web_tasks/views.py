@@ -11,7 +11,12 @@ from users.models import User
 @login_required(login_url="/users/login/")
 def tasks(request):
     if request.method == "POST":
-        check_flag(request.user, request.POST.get("input_flag"))
+        messange = check_flag(request.user,
+                              request.POST.get("input_flag"),
+                              request.user.is_superuser)
+    else:
+        messange = None
+
 
     users_with_balls = []
 
@@ -26,35 +31,70 @@ def tasks(request):
 
     return render(
         request,
+
         "web_tasks/tasks.html",
-        {"title": "Журнал работ", "jobs": jobs, "users_table": users_with_balls},
+
+        {
+            "title": "Журнал работ",
+            "jobs": jobs,
+            "users_table": users_with_balls,
+            "messange": messange,
+        },
     )
 
 
 @login_required(login_url="/users/login/")
 def task(request, pk):
     if request.method == "POST":
-        check_flag(request.user, request.POST.get("input_flag"))
+        messange = check_flag(request.user,
+                              request.POST.get("input_flag"),
+                              request.user.is_superuser)
+    else:
+        messange = None
+
 
     job = get_object_or_404(Jobs, pk=pk, show=True)
     job.flag = "Not cheating"
 
     if job:
         return render(
-            request, "web_tasks/task.html", {"title": "Журнал работ", "job": job}
+            request,
+
+            "web_tasks/task.html",
+
+            {
+                "title": "Журнал работ",
+                "job": job,
+                "messange": messange,
+            },
         )
 
 
 @login_required(login_url="/users/login/")
 def web_task(request, link):
     if request.method == "POST":
-        check_flag(request.user, request.POST.get("input_flag"))
+        messange = check_flag(request.user,
+                              request.POST.get("input_flag"),
+                              request.user.is_superuser)
+    else:
+        messange = None
 
+
+    """ 
+    Пока что не используется
+    
     if link not in ["web3/robots.txt", "help_for_ctf_task_crypto"]:
-        get_object_or_404(Jobs, link=link, show=True)
+        get_object_or_404(Jobs, link=link, show=True) """
 
     if "." not in link or "/" in link:
-        return render(request, "tasks/" + link + ".html")
+        return render(request,
+                      
+                      "tasks/" + link + ".html",
+                      
+                      {
+                        "messange": messange,
+                      },
+                    )
     else:
         file_path = os.path.join(settings.BASE_DIR, "tasks", link)
 
