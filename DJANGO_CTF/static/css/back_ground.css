@@ -2,24 +2,23 @@ body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif, Arial, sans-serif;
   background-color: #161418;
-  --text_color : #ffffff;
-  transition: background-color 0.8s ease;
+  --text_color: #ffffff;
 }
 
 body.light-theme {
   background-color: #ffffff;
-  --text_color : #000000;
+  --text_color: #000000;
 }
 
 body.dark-theme {
   background-color: #161418;
-  --text_color : #ffffff;
+  --text_color: #ffffff;
 }
 
 summary,
 p,
 a,
-h2{
+h2 {
   text-decoration: none;
   color: var(--text_color);
 }
@@ -43,23 +42,22 @@ hr {
   margin-left: auto
 }
 
-.bg{
+.bg {
   position: fixed;
   top: 50%;
   left: 48%;
   z-index: -1;
   transform: translate(-50%, -50%);
   color: var(--text_color)
-  
 }
 
-h1{
+h1 {
   font-size: 2000%;
   filter: opacity(0.5);
   user-select: none;
 }
 
-.tasks_text{
+.tasks_text {
   text-align: center;
   color: var(--text_color);
   font-size: 100px;

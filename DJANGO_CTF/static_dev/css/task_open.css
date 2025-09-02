@@ -1,8 +1,7 @@
-body{
-  --background-color: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+body {
+  --background-color: linear-gradient(0deg, rgba(40, 44, 52, 1) 0%, rgba(17, 0, 32, .5) 100%);
   --background-color-button: #858a93;
   --text_color: #ffffff;
-  transition: --background-color 0.8s ease;
 }
 
 body.light-theme {
@@ -12,12 +11,12 @@ body.light-theme {
 }
 
 body.dark-theme {
-  --background-color: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  --background-color: linear-gradient(0deg, rgba(40, 44, 52, 1) 0%, rgba(17, 0, 32, .5) 100%);
   --background-color-button: #858a93;
   --text_color: #ffffff;
 }
 
-.Task_open{
+.Task_open {
   user-select: none;
   width: 70vw;
   height: 75vh;
@@ -30,18 +29,21 @@ body.dark-theme {
   backdrop-filter: blur(7px);
   overflow: hidden;
 }
-.info{
+
+.info {
   display: flex;
   width: 100%;
   padding: 1rem;
 }
-.taskImage{
+
+.taskImage {
   border-radius: .5rem;
   width: 17vw;
   height: 17vw;
   object-fit: cover;
 }
-.taskname{
+
+.taskname {
   display: flex;
   position: absolute;
   left: 19vw;
@@ -49,7 +51,8 @@ body.dark-theme {
   color: gray;
   font-size: 40px;
 }
-.creator{
+
+.creator {
   position: absolute;
   left: 19vw;
   top: 5vw;
@@ -57,49 +60,57 @@ body.dark-theme {
   color: cyan;
   font-size: 25px;
 }
-.taskInfo{
+
+.taskInfo {
   justify-content: space-between;
   align-items: center;
 }
-.balls{
+
+.balls {
   position: absolute;
   left: 19vw;
   top: 16vw;
   color: #ee83e5;
   font-weight: 700;
 }
-.is_finish{
+
+.is_finish {
   position: absolute;
   left: 28vw;
   top: 16vw;
   color: #a89ec9;
   margin-right: .2rem;
 }
-.count_finish{
+
+.count_finish {
   position: absolute;
   left: 36vw;
   top: 16vw;
   color: #a89ec9;
   margin-right: .2rem;
 }
-p{
+
+p {
   margin: 0px 2vw 8vw 2vw;
   color: var(--text_color)
 }
-.format_flag{
+
+.format_flag {
   position: absolute;
   left: 2vw;
   top: 23vw;
   color: #ee83e5;
 }
-.hint{
+
+.hint {
   position: absolute;
   left: 2vw;
   top: 29vw;
 }
-.button_download{
+
+.button_download {
   width: 20%;
-  margin: 0 0 0  77%;
+  margin: 0 0 0 77%;
   border: 1px solid #ffffff22;
   background-color: #858a93;
   background: var(--background-color-button);

@@ -2,13 +2,18 @@
 {% load static %}
 <html lang="en">
 <meta http-equiv="refresh" content="60000">
+
 <head>
-    <link rel="stylesheet"
-            href="{% static 'css/for_login.css' %}">
+    <link rel="stylesheet" href="{% static 'css/for_login.css' %}">
 </head>
 <header>
     <nav class="menu">
-        <a class="CTF" href="/">CTF</a>
+        <div class="first_part">
+            <a class="CTF" href="/">CTF</a>
+        </div>
+        <div class="fourth_part">
+            <button id="themeToggle" class='themeToggle'>☽</button>
+        </div>
     </nav>
 </header>
 <main role="main" class="container">
@@ -19,39 +24,64 @@
     <form action="" method="post">
         {% csrf_token %}
         <p>
-            <input class="datas" type="text" name="name" placeholder="Название команды:" maxlength="255" required="" id="id_name">
+            <input class="datas" type="text" name="name" placeholder="Название команды:" maxlength="255" required=""
+                id="id_name">
         </p>
         <p>
             <input class="datas" type="password" name="password" required="" placeholder="Пароль:" id="id_password">
         </p>
-            <button type="submit" class="btn">Войти</button>
+        <button type="submit" class="btn">Войти</button>
         {% if message %}
-            <div class="error">{{ message }}</div>
+        <div class="error">{{ message }}</div>
         {% endif %}
     </form>
+    <p class="registration">
+        Нету команды? Создайте её <a href="https://t.me/CTF_helper_for_lyceum_393_bot">здесь</a>.
+    </p>
+    <img class="tg_bot_img" src="{% static 'img/tg_bot.png' %}"
+        alt="Создать команду здесь: https://t.me/CTF_helper_for_lyceum_393_bot">
+
 </main>
 <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE+IbbVYUew+OrCXaRkfj3y5b7xXyX5D9z2e8c8U3z7f7p7wG2jYtL"
-        crossorigin="anonymous"></script>
+    integrity="sha384-J6qa4849blE+IbbVYUew+OrCXaRkfj3y5b7xXyX5D9z2e8c8U3z7f7p7wG2jYtL" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
-        integrity="sha384-Piv4xVNRyMGpqk0KjD0Hf0m6gZ5Hq3B1gA3p1JQZqzG6b6H0Lq8p4n6Yq6JxG7"
-        crossorigin="anonymous"></script>
+    integrity="sha384-Piv4xVNRyMGpqk0KjD0Hf0m6gZ5Hq3B1gA3p1JQZqzG6b6H0Lq8p4n6Yq6JxG7" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/0RrjW5y5b7xXyX5D9z2e8c8U3z7f7p7wG2jYtL"
-        crossorigin="anonymous"></script>
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/0RrjW5y5b7xXyX5D9z2e8c8U3z7f7p7wG2jYtL"
+    crossorigin="anonymous"></script>
 <script>
-    let flag = 0
-    setInterval(function() {
+    window.addEventListener('resize', function () {
         if (window.innerWidth <= 1200 || window.innerWidth >= 2400) {
             document.body.innerHTML = '<div style="user-select: none;width: 90vw;height: 85vh;margin: 5% 0px 0px 5%;border: 1px solid #ffffff22;background-color: #282c34;background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);box-shadow: 0 7px 20px 5px #00000088;border-radius: .7rem;backdrop-filter: blur(7px);overflow: hidden;font-size: 7vw;">Просмотр при данном маштабировании не поддерживается</div>';
-            flag = 1
         }
         else {
-            if (flag === 1){
-                document.body.innerHTML = '<meta http-equiv="refresh" content="0">';
-                flag = 0
-            }
+            document.body.innerHTML = '<meta http-equiv="refresh" content="0">';
         }
-    }, 10);
-</script> 
+    });
+</script>
+<script>
+    document.getElementById('themeToggle').addEventListener('click', function () {
+        const currentTheme = document.body.className;
+        if (currentTheme === 'light-theme') {
+            document.body.className = 'dark-theme';
+            document.getElementById("themeToggle").innerHTML = '☽'
+            localStorage.setItem('theme', 'dark')
+        } else {
+            document.body.className = 'light-theme';
+            document.getElementById("themeToggle").innerHTML = '☀'
+            localStorage.setItem('theme', 'light')
+        }
+    });
+
+    function myFunction() {
+        if (localStorage.getItem('theme') === "dark") {
+            document.body.className = 'dark-theme';
+            document.getElementById("themeToggle").innerHTML = '☀';
+        } else {
+            document.body.className = 'light-theme';
+            document.getElementById("themeToggle").innerHTML = '☽'
+        }
+    };
+</script>
+
 </html>

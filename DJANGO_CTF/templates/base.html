@@ -93,6 +93,8 @@
         </div>
         <div class="forth_part">
             <a class="CTF" href="/">CTF</a>
+        </div>
+        <div class="firth_part">
             <button id="themeToggle" class='themeToggle'>☽</button>
         </div>
         {% else %}
@@ -101,7 +103,8 @@
         </div>
         <div class="second_part"></div>
         <div class="third_part"></div>
-        <div class="forth_part">
+        <div class="forth_part"></div>
+        <div class="firth_part">
             <button id="themeToggle" class='themeToggle'>☽</button>
         </div>
         {% endif %}
@@ -135,8 +138,7 @@
                 localStorage.setItem('theme', 'light')
             }
         });
-    </script>
-    <script>
+
         function myFunction() {
             if (localStorage.getItem('theme') === "dark") {
                 document.body.className = 'dark-theme';

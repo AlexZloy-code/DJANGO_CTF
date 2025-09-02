@@ -1,27 +1,42 @@
-.main_web{
+body {
+  --background-color: linear-gradient(0deg, rgba(40, 44, 52, 1) 0%, rgba(17, 0, 32, .5) 100%);
+}
+
+body.light-theme {
+  --background-color: #ffffff;
+}
+
+body.dark-theme {
+  --background-color: linear-gradient(0deg, rgba(40, 44, 52, 1) 0%, rgba(17, 0, 32, .5) 100%);
+}
+
+.main_web {
   user-select: none;
   width: 100%;
   margin: 2.5% 0px 0px 0px;
   border: 1px solid #ffffff22;
   background-color: #282c34;
-  background: linear-gradient(0deg, rgba(40,44,52,1) 0%, rgba(17,0,32,.5) 100%);
+  background: var(--background-color);
   box-shadow: 0 7px 20px 5px #00000088;
   border-radius: .7rem;
   backdrop-filter: blur(7px);
   overflow: hidden;
 }
-.info{
+
+.info {
   display: flex;
   width: 100%;
   padding: 1rem;
 }
-.taskImage{
+
+.taskImage {
   border-radius: .5rem;
   width: 150px;
   height: 150px;
   object-fit: cover;
 }
-.taskname{
+
+.taskname {
   display: flex;
   position: absolute;
   left: 190px;
@@ -30,21 +45,25 @@
   font-size: 40px;
   width: 1000px;
 }
-.taskInfo{
+
+.taskInfo {
   justify-content: space-between;
   align-items: center;
 }
-p{
+
+p {
   margin: 0 0 2% 2%;
   max-width: 95%;
   font-size: 28px;
 }
-img{
+
+img {
   margin: 0 0 2% 10%;
   height: 17.5vw;
   width: 17.5vw;
 }
-h2{
+
+h2 {
   font-size: 60px;
   margin: 0 0 0 45%;
 }
